@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA6EA97A182F0123002B063E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA979182F0123002B063E /* Foundation.framework */; };
+		EA6EA97C182F0123002B063E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA97B182F0123002B063E /* CoreGraphics.framework */; };
+		EA6EA97E182F0123002B063E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA97D182F0123002B063E /* UIKit.framework */; };
+		EA6EA984182F0123002B063E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA6EA982182F0123002B063E /* InfoPlist.strings */; };
+		EA6EA986182F0123002B063E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EA985182F0123002B063E /* main.m */; };
+		EA6EA98A182F0123002B063E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EA989182F0123002B063E /* AppDelegate.m */; };
+		EA6EA98D182F0123002B063E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6EA98B182F0123002B063E /* Main.storyboard */; };
+		EA6EA990182F0123002B063E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EA98F182F0123002B063E /* ViewController.m */; };
+		EA6EA992182F0123002B063E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA6EA991182F0123002B063E /* Images.xcassets */; };
+		EA6EA999182F0124002B063E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA998182F0124002B063E /* XCTest.framework */; };
+		EA6EA99A182F0124002B063E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA979182F0123002B063E /* Foundation.framework */; };
+		EA6EA99B182F0124002B063E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA97D182F0123002B063E /* UIKit.framework */; };
+		EA6EA9A3182F0124002B063E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA6EA9A1182F0124002B063E /* InfoPlist.strings */; };
+		EA6EA9A5182F0124002B063E /* weather_retryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EA9A4182F0124002B063E /* weather_retryTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA6EA99C182F0124002B063E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA6EA96E182F0123002B063E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA6EA975182F0123002B063E;
+			remoteInfo = "weather-retry";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EA6EA976182F0123002B063E /* weather-retry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-retry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA6EA979182F0123002B063E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA6EA97B182F0123002B063E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA6EA97D182F0123002B063E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EA6EA981182F0123002B063E /* weather-retry-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "weather-retry-Info.plist"; sourceTree = "<group>"; };
+		EA6EA983182F0123002B063E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA6EA985182F0123002B063E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA6EA987182F0123002B063E /* weather-retry-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "weather-retry-Prefix.pch"; sourceTree = "<group>"; };
+		EA6EA988182F0123002B063E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EA6EA989182F0123002B063E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EA6EA98C182F0123002B063E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA6EA98E182F0123002B063E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EA6EA98F182F0123002B063E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EA6EA991182F0123002B063E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EA6EA997182F0124002B063E /* weather-retryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weather-retryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA6EA998182F0124002B063E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EA6EA9A0182F0124002B063E /* weather-retryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "weather-retryTests-Info.plist"; sourceTree = "<group>"; };
+		EA6EA9A2182F0124002B063E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA6EA9A4182F0124002B063E /* weather_retryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weather_retryTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA6EA973182F0123002B063E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6EA97C182F0123002B063E /* CoreGraphics.framework in Frameworks */,
+				EA6EA97E182F0123002B063E /* UIKit.framework in Frameworks */,
+				EA6EA97A182F0123002B063E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA6EA994182F0124002B063E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6EA999182F0124002B063E /* XCTest.framework in Frameworks */,
+				EA6EA99B182F0124002B063E /* UIKit.framework in Frameworks */,
+				EA6EA99A182F0124002B063E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA6EA96D182F0123002B063E = {
+			isa = PBXGroup;
+			children = (
+				EA6EA97F182F0123002B063E /* weather-retry */,
+				EA6EA99E182F0124002B063E /* weather-retryTests */,
+				EA6EA978182F0123002B063E /* Frameworks */,
+				EA6EA977182F0123002B063E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA6EA977182F0123002B063E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA6EA976182F0123002B063E /* weather-retry.app */,
+				EA6EA997182F0124002B063E /* weather-retryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA6EA978182F0123002B063E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA6EA979182F0123002B063E /* Foundation.framework */,
+				EA6EA97B182F0123002B063E /* CoreGraphics.framework */,
+				EA6EA97D182F0123002B063E /* UIKit.framework */,
+				EA6EA998182F0124002B063E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA6EA97F182F0123002B063E /* weather-retry */ = {
+			isa = PBXGroup;
+			children = (
+				EA6EA988182F0123002B063E /* AppDelegate.h */,
+				EA6EA989182F0123002B063E /* AppDelegate.m */,
+				EA6EA98B182F0123002B063E /* Main.storyboard */,
+				EA6EA98E182F0123002B063E /* ViewController.h */,
+				EA6EA98F182F0123002B063E /* ViewController.m */,
+				EA6EA991182F0123002B063E /* Images.xcassets */,
+				EA6EA980182F0123002B063E /* Supporting Files */,
+			);
+			path = "weather-retry";
+			sourceTree = "<group>";
+		};
+		EA6EA980182F0123002B063E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA6EA981182F0123002B063E /* weather-retry-Info.plist */,
+				EA6EA982182F0123002B063E /* InfoPlist.strings */,
+				EA6EA985182F0123002B063E /* main.m */,
+				EA6EA987182F0123002B063E /* weather-retry-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA6EA99E182F0124002B063E /* weather-retryTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA6EA9A4182F0124002B063E /* weather_retryTests.m */,
+				EA6EA99F182F0124002B063E /* Supporting Files */,
+			);
+			path = "weather-retryTests";
+			sourceTree = "<group>";
+		};
+		EA6EA99F182F0124002B063E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA6EA9A0182F0124002B063E /* weather-retryTests-Info.plist */,
+				EA6EA9A1182F0124002B063E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA6EA975182F0123002B063E /* weather-retry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA6EA9A8182F0124002B063E /* Build configuration list for PBXNativeTarget "weather-retry" */;
+			buildPhases = (
+				EA6EA972182F0123002B063E /* Sources */,
+				EA6EA973182F0123002B063E /* Frameworks */,
+				EA6EA974182F0123002B063E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "weather-retry";
+			productName = "weather-retry";
+			productReference = EA6EA976182F0123002B063E /* weather-retry.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA6EA996182F0124002B063E /* weather-retryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA6EA9AB182F0124002B063E /* Build configuration list for PBXNativeTarget "weather-retryTests" */;
+			buildPhases = (
+				EA6EA993182F0124002B063E /* Sources */,
+				EA6EA994182F0124002B063E /* Frameworks */,
+				EA6EA995182F0124002B063E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA6EA99D182F0124002B063E /* PBXTargetDependency */,
+			);
+			name = "weather-retryTests";
+			productName = "weather-retryTests";
+			productReference = EA6EA997182F0124002B063E /* weather-retryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA6EA96E182F0123002B063E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = tonyalbor;
+				TargetAttributes = {
+					EA6EA996182F0124002B063E = {
+						TestTargetID = EA6EA975182F0123002B063E;
+					};
+				};
+			};
+			buildConfigurationList = EA6EA971182F0123002B063E /* Build configuration list for PBXProject "weather-retry" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA6EA96D182F0123002B063E;
+			productRefGroup = EA6EA977182F0123002B063E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA6EA975182F0123002B063E /* weather-retry */,
+				EA6EA996182F0124002B063E /* weather-retryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA6EA974182F0123002B063E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6EA992182F0123002B063E /* Images.xcassets in Resources */,
+				EA6EA984182F0123002B063E /* InfoPlist.strings in Resources */,
+				EA6EA98D182F0123002B063E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA6EA995182F0124002B063E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6EA9A3182F0124002B063E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA6EA972182F0123002B063E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6EA990182F0123002B063E /* ViewController.m in Sources */,
+				EA6EA98A182F0123002B063E /* AppDelegate.m in Sources */,
+				EA6EA986182F0123002B063E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA6EA993182F0124002B063E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6EA9A5182F0124002B063E /* weather_retryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA6EA99D182F0124002B063E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA6EA975182F0123002B063E /* weather-retry */;
+			targetProxy = EA6EA99C182F0124002B063E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA6EA982182F0123002B063E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA6EA983182F0123002B063E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA6EA98B182F0123002B063E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA6EA98C182F0123002B063E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EA6EA9A1182F0124002B063E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA6EA9A2182F0124002B063E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA6EA9A6182F0124002B063E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EA6EA9A7182F0124002B063E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA6EA9A9182F0124002B063E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "weather-retry/weather-retry-Prefix.pch";
+				INFOPLIST_FILE = "weather-retry/weather-retry-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EA6EA9AA182F0124002B063E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "weather-retry/weather-retry-Prefix.pch";
+				INFOPLIST_FILE = "weather-retry/weather-retry-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EA6EA9AC182F0124002B063E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/weather-retry.app/weather-retry";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "weather-retry/weather-retry-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "weather-retryTests/weather-retryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EA6EA9AD182F0124002B063E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/weather-retry.app/weather-retry";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "weather-retry/weather-retry-Prefix.pch";
+				INFOPLIST_FILE = "weather-retryTests/weather-retryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA6EA971182F0123002B063E /* Build configuration list for PBXProject "weather-retry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA6EA9A6182F0124002B063E /* Debug */,
+				EA6EA9A7182F0124002B063E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA6EA9A8182F0124002B063E /* Build configuration list for PBXNativeTarget "weather-retry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA6EA9A9182F0124002B063E /* Debug */,
+				EA6EA9AA182F0124002B063E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EA6EA9AB182F0124002B063E /* Build configuration list for PBXNativeTarget "weather-retryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA6EA9AC182F0124002B063E /* Debug */,
+				EA6EA9AD182F0124002B063E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA6EA96E182F0123002B063E /* Project object */;
+}
