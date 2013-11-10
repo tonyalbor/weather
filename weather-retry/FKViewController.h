@@ -13,4 +13,7 @@
     CLLocationManager *locationManager;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+
+
 @end

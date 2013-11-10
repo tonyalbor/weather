@@ -15,6 +15,18 @@
 @end
 
 @implementation FKViewController
+@synthesize cityLabel;
+
+
+- (IBAction)triggerCity:(id)sender {
+    //ini for location info
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
+}
+
 
 - (void) viewDidLoad {
     NSLog(@"view did load");
@@ -48,8 +60,7 @@
         CLPlacemark *placemark = [placemarks lastObject];
         NSString *city;
         city = [placemark.addressDictionary objectForKey: @"City"];
-        NSLog(@"city: %@",city);
-        //return city;
+        cityLabel.text = city;
         
     }];
     return;
@@ -73,13 +84,6 @@
 
     
     [super viewDidAppear:animated];
-    
-    //ini for location info
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [locationManager startUpdatingLocation];
     
     /*
     // Request the forecast for a location starting now
