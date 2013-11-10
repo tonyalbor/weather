@@ -35,9 +35,6 @@
     [self getConditionsForLatitude:latitude ForLongitude:lonitude];
     [self getCurrentCity:location];
     return;
-    
-    
-    
 }
 
 - (void)getCurrentCity:(CLLocation *)location {
