@@ -1,15 +1,19 @@
 //
-//  AppDelegate.h
-//  weather-retry
+//  FKAppDelegate.h
+//  ForecastKit
 //
-//  Created by Tony Albor on 11/9/13.
-//  Copyright (c) 2013 tonyalbor. All rights reserved.
+//  Created by Brandon Emrich on 3/28/13.
+//  Copyright (c) 2013 Brandon Emrich. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@class FKViewController;
+
+@interface FKAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) FKViewController *viewController;
 
 @end

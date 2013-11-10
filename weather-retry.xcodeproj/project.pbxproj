@@ -30,6 +30,10 @@
 		EA6EA9C8182F0CAB002B063E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EA9BD182F0CAB002B063E /* AFURLConnectionOperation.m */; };
 		EA6EA9C9182F0CAB002B063E /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EA9BF182F0CAB002B063E /* AFXMLRequestOperation.m */; };
 		EA6EA9CA182F0CAB002B063E /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EA9C1182F0CAB002B063E /* UIImageView+AFNetworking.m */; };
+		EA6EA9CD182F0D5F002B063E /* ForecastKit.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EA9CC182F0D5F002B063E /* ForecastKit.m */; };
+		EA6EA9D0182F0DC6002B063E /* FKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EA9CF182F0DC6002B063E /* FKViewController.m */; };
+		EA6EA9D2182F0FC9002B063E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA9D1182F0FC9002B063E /* MobileCoreServices.framework */; };
+		EA6EA9D4182F0FD9002B063E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA9D3182F0FD9002B063E /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,12 @@
 		EA6EA9BF182F0CAB002B063E /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		EA6EA9C0182F0CAB002B063E /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		EA6EA9C1182F0CAB002B063E /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		EA6EA9CB182F0D5F002B063E /* ForecastKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastKit.h; sourceTree = "<group>"; };
+		EA6EA9CC182F0D5F002B063E /* ForecastKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastKit.m; sourceTree = "<group>"; };
+		EA6EA9CE182F0DC6002B063E /* FKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKViewController.h; sourceTree = "<group>"; };
+		EA6EA9CF182F0DC6002B063E /* FKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKViewController.m; sourceTree = "<group>"; };
+		EA6EA9D1182F0FC9002B063E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		EA6EA9D3182F0FD9002B063E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6EA9D4182F0FD9002B063E /* SystemConfiguration.framework in Frameworks */,
+				EA6EA9D2182F0FC9002B063E /* MobileCoreServices.framework in Frameworks */,
 				EA6EA97C182F0123002B063E /* CoreGraphics.framework in Frameworks */,
 				EA6EA97E182F0123002B063E /* UIKit.framework in Frameworks */,
 				EA6EA97A182F0123002B063E /* Foundation.framework in Frameworks */,
@@ -110,6 +122,8 @@
 		EA6EA96D182F0123002B063E = {
 			isa = PBXGroup;
 			children = (
+				EA6EA9CB182F0D5F002B063E /* ForecastKit.h */,
+				EA6EA9CC182F0D5F002B063E /* ForecastKit.m */,
 				EA6EA97F182F0123002B063E /* weather-retry */,
 				EA6EA99E182F0124002B063E /* weather-retryTests */,
 				EA6EA978182F0123002B063E /* Frameworks */,
@@ -129,6 +143,8 @@
 		EA6EA978182F0123002B063E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA6EA9D3182F0FD9002B063E /* SystemConfiguration.framework */,
+				EA6EA9D1182F0FC9002B063E /* MobileCoreServices.framework */,
 				EA6EA979182F0123002B063E /* Foundation.framework */,
 				EA6EA97B182F0123002B063E /* CoreGraphics.framework */,
 				EA6EA97D182F0123002B063E /* UIKit.framework */,
@@ -141,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				EA6EA988182F0123002B063E /* AppDelegate.h */,
+				EA6EA9CE182F0DC6002B063E /* FKViewController.h */,
+				EA6EA9CF182F0DC6002B063E /* FKViewController.m */,
 				EA6EA989182F0123002B063E /* AppDelegate.m */,
 				EA6EA98B182F0123002B063E /* Main.storyboard */,
 				EA6EA98E182F0123002B063E /* ViewController.h */,
@@ -307,12 +325,14 @@
 				EA6EA9C4182F0CAB002B063E /* AFImageRequestOperation.m in Sources */,
 				EA6EA990182F0123002B063E /* ViewController.m in Sources */,
 				EA6EA9C7182F0CAB002B063E /* AFPropertyListRequestOperation.m in Sources */,
+				EA6EA9D0182F0DC6002B063E /* FKViewController.m in Sources */,
 				EA6EA98A182F0123002B063E /* AppDelegate.m in Sources */,
 				EA6EA9C8182F0CAB002B063E /* AFURLConnectionOperation.m in Sources */,
 				EA6EA9C9182F0CAB002B063E /* AFXMLRequestOperation.m in Sources */,
 				EA6EA9C5182F0CAB002B063E /* AFJSONRequestOperation.m in Sources */,
 				EA6EA9CA182F0CAB002B063E /* UIImageView+AFNetworking.m in Sources */,
 				EA6EA9C6182F0CAB002B063E /* AFNetworkActivityIndicatorManager.m in Sources */,
+				EA6EA9CD182F0D5F002B063E /* ForecastKit.m in Sources */,
 				EA6EA9C3182F0CAB002B063E /* AFHTTPRequestOperation.m in Sources */,
 				EA6EA986182F0123002B063E /* main.m in Sources */,
 				EA6EA9C2182F0CAB002B063E /* AFHTTPClient.m in Sources */,

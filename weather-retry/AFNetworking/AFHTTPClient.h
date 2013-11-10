@@ -73,6 +73,12 @@
  - NSCoding cannot serialize / deserialize block properties, so an archive of an HTTP client will not include any reachability callback block that may be set.
  */
 
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#endif
+
 #ifdef _SYSTEMCONFIGURATION_H
 typedef enum {
     AFNetworkReachabilityStatusUnknown          = -1,
