@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AB4C512F-E165-40B9-BD28-F9BC67453C1F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>weather-retry</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>274E1C81-EA65-4CCD-8367-53699B9A208B</key>
+		<string>https://github.com/tonyalbor/weather.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>weather-retry.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>274E1C81-EA65-4CCD-8367-53699B9A208B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tonyalbor/weather.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>274E1C81-EA65-4CCD-8367-53699B9A208B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>274E1C81-EA65-4CCD-8367-53699B9A208B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>weather</string>
+		</dict>
+	</array>
+</dict>
+</plist>
