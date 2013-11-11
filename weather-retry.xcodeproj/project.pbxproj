@@ -35,6 +35,7 @@
 		EA6EA9D0182F0DC6002B063E /* FKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EA9CF182F0DC6002B063E /* FKViewController.m */; };
 		EA6EA9D2182F0FC9002B063E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA9D1182F0FC9002B063E /* MobileCoreServices.framework */; };
 		EA6EA9D4182F0FD9002B063E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA9D3182F0FD9002B063E /* SystemConfiguration.framework */; };
+		EAA32FFA1831081F00888B9E /* ForecastDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA32FF91831081F00888B9E /* ForecastDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		EA6EA9CF182F0DC6002B063E /* FKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKViewController.m; sourceTree = "<group>"; };
 		EA6EA9D1182F0FC9002B063E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		EA6EA9D3182F0FD9002B063E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EAA32FF81831081F00888B9E /* ForecastDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastDataSource.h; sourceTree = "<group>"; };
+		EAA32FF91831081F00888B9E /* ForecastDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 			children = (
 				EA6EA9CB182F0D5F002B063E /* ForecastKit.h */,
 				EA6EA9CC182F0D5F002B063E /* ForecastKit.m */,
+				EAA32FF81831081F00888B9E /* ForecastDataSource.h */,
+				EAA32FF91831081F00888B9E /* ForecastDataSource.m */,
 				EA6EA97F182F0123002B063E /* weather-retry */,
 				EA6EA99E182F0124002B063E /* weather-retryTests */,
 				EA6EA978182F0123002B063E /* Frameworks */,
@@ -329,6 +334,7 @@
 				EA6EA9C4182F0CAB002B063E /* AFImageRequestOperation.m in Sources */,
 				EA6EA990182F0123002B063E /* ViewController.m in Sources */,
 				EA6EA9C7182F0CAB002B063E /* AFPropertyListRequestOperation.m in Sources */,
+				EAA32FFA1831081F00888B9E /* ForecastDataSource.m in Sources */,
 				EA6EA9D0182F0DC6002B063E /* FKViewController.m in Sources */,
 				EA6EA98A182F0123002B063E /* AppDelegate.m in Sources */,
 				EA6EA9C8182F0CAB002B063E /* AFURLConnectionOperation.m in Sources */,

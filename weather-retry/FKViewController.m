@@ -16,11 +16,11 @@
 
 @implementation FKViewController
 @synthesize cityLabel;
+@synthesize dataSource;
 
 
 - (IBAction)triggerCity:(id)sender {
-    NSLog(@"button pressed");
-    //ini for location info
+    // init for location info
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -31,6 +31,8 @@
 
 - (void) viewDidLoad {
     NSLog(@"view did load");
+    if(dataSource == nil) dataSource = [ForecastDataSource sharedDataSource];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -42,14 +44,15 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     NSLog(@"did update locations");
+    [locationManager stopUpdatingLocation];
     // get newly updated location and grab its coordinates
     CLLocation* location = [locations lastObject];
     CLLocationDegrees latitude = location.coordinate.latitude;
-    CLLocationDegrees lonitude = location.coordinate.longitude;
+    CLLocationDegrees longitude = location.coordinate.longitude;
     
-    [self getConditionsForLatitude:latitude ForLongitude:lonitude];
+    [dataSource getConditionsForLatitude:latitude ForLongitude:longitude];
+    //[self getConditionsForLatitude:latitude ForLongitude:lonitude];
     [self getCurrentCity:location];
-    [locationManager stopUpdatingLocation];
 }
 
 - (void)getCurrentCity:(CLLocation *)location {
@@ -68,58 +71,20 @@
     return;
 }
 
--(void) getConditionsForLatitude:(CLLocationDegrees) latitude ForLongitude:(CLLocationDegrees) longitude {
-    ForecastKit *forecast = [[ForecastKit alloc] initWithAPIKey:@"f58ba3586b5691d23a2eb3bf45eaeea4"];
-
-    [forecast getCurrentConditionsForLatitude:latitude longitude:longitude success:^(NSMutableDictionary *responseDict) {
-        
-        NSLog(@"%@", responseDict);
-        
-    } failure:^(NSError *error){
-        
-        NSLog(@"Currently %@", error.description);
-        
-    }];
-}
-
 - (void) viewDidAppear:(BOOL)animated {
 
     
     [super viewDidAppear:animated];
-    
     /*
-    // Request the forecast for a location starting now
-    [forecast getDailyForcastForLatitude:31.146187 longitude:-83.452435 success:^(NSArray *responseArray) {
-        
-        //NSLog(@"%@", responseArray);
-        
-    } failure:^(NSError *error){
-        
-        NSLog(@"Daily %@", error.description);
-        
-    }];
     
     // Request the forecast for a location starting now
-    [forecast getHourlyForcastForLatitude:31.146187 longitude:-83.452435 success:^(NSArray *responseArray) {
-        
-        //NSLog(@"%@", responseArray);
-        
-    } failure:^(NSError *error){
-        
-        NSLog(@"Hourly %@", error.description);
-        
-    }];
+    
     
     // Request the forecast for a location starting now
-    [forecast getMinutelyForcastForLatitude:31.146187 longitude:-83.452435 success:^(NSArray *responseArray) {
-        
-        //NSLog(@"%@", responseArray);
-        
-    } failure:^(NSError *error){
-        
-        NSLog(@"Minutely %@", error.description);
-        
-    }];
+    
+    
+    // Request the forecast for a location starting now
+    
     
     // Request the forecast for a location at a specified time
     [forecast getDailyForcastForLatitude:31.146187 longitude:-83.452435 time:1372708800 success:^(NSArray *responseArray) {

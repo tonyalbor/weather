@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
+#import "ForecastDataSource.h"
 
 @interface FKViewController : UIViewController <CLLocationManagerDelegate> {
     CLLocationManager *locationManager;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+
+@property (strong, nonatomic) ForecastDataSource *dataSource;
 
 
 @end
