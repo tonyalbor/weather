@@ -11,6 +11,7 @@
 @implementation ForecastDataSource
 
 @synthesize forecast;
+@synthesize delegate;
 
 static ForecastDataSource *_sharedDataSource = nil;
 
@@ -24,11 +25,13 @@ static ForecastDataSource *_sharedDataSource = nil;
     return _sharedDataSource;
 }
 
-- (void)getConditionsForLatitude:(CLLocationDegrees)latitude ForLongitude:(CLLocationDegrees)longitude {
-    NSLog(@"got called boyy");
+#pragma mark current time
+
+- (void)getConditionsForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude {
     [forecast getCurrentConditionsForLatitude:latitude longitude:longitude success:^(NSMutableDictionary *responseDict) {
         
         NSLog(@"%@", responseDict);
+        [delegate didGetConditions:responseDict];
         
     } failure:^(NSError *error){
         
@@ -37,7 +40,7 @@ static ForecastDataSource *_sharedDataSource = nil;
     }];
 }
 
-- (void)getDailyForecastForLatitude:(CLLocationDegrees)latitude ForLongitude:(CLLocationDegrees)longitude {
+- (void)getDailyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude {
     [forecast getDailyForcastForLatitude:latitude longitude:longitude success:^(NSArray *responseArray) {
         
         NSLog(@"%@", responseArray);
@@ -49,7 +52,7 @@ static ForecastDataSource *_sharedDataSource = nil;
     }];
 }
 
-- (void)getHourlyForecastForLatitude:(CLLocationDegrees)latitude ForLongitude:(CLLocationDegrees)longitude {
+- (void)getHourlyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude {
     [forecast getHourlyForcastForLatitude:latitude longitude:longitude success:^(NSArray *responseArray) {
         
         NSLog(@"%@", responseArray);
@@ -61,8 +64,8 @@ static ForecastDataSource *_sharedDataSource = nil;
     }];
 }
 
-- (void)getMinutelyForecastForLatitude:(CLLocationDegrees)latitude ForLongitude:(CLLocationDegrees)longitude {
-    [forecast getMinutelyForcastForLatitude:31.146187 longitude:-83.452435 success:^(NSArray *responseArray) {
+- (void)getMinutelyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude {
+    [forecast getMinutelyForcastForLatitude:latitude longitude:longitude success:^(NSArray *responseArray) {
         
         NSLog(@"%@", responseArray);
         
@@ -71,6 +74,33 @@ static ForecastDataSource *_sharedDataSource = nil;
         NSLog(@"Minutely %@", error.description);
         
     }];
+}
+
+#pragma mark given time
+
+- (void)getDailyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude atTime:(NSTimeInterval)time {
+    [forecast getDailyForcastForLatitude:latitude longitude:longitude time:time success:^(NSArray *responseArray) {
+        
+        NSLog(@"%@", responseArray);
+        
+    } failure:^(NSError *error){
+        
+        NSLog(@"Daily w/ time %@", error.description);
+        
+    }];
+}
+
+- (void)getHourlyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude atTime:(NSTimeInterval)time {
+    [forecast getHourlyForcastForLatitude:latitude longitude:longitude time:time success:^(NSArray *responseArray) {
+        
+        NSLog(@"%@", responseArray);
+        
+    } failure:^(NSError *error){
+        
+        NSLog(@"Hourly w/ time %@", error.description);
+        
+    }];
+
 }
 
 @end

@@ -10,15 +10,31 @@
 #import <CoreLocation/CoreLocation.h>
 #import "ForecastKit.h"
 
+@protocol ForecastDataSourceDelegate;
+
 @interface ForecastDataSource : NSObject
 
 @property (strong, nonatomic) ForecastKit *forecast;
 
+@property (weak, nonatomic) id<ForecastDataSourceDelegate> delegate;
+
 + (ForecastDataSource *)sharedDataSource;
 
-- (void)getConditionsForLatitude:(CLLocationDegrees)latitude ForLongitude:(CLLocationDegrees)longitude;
-- (void)getDailyForecastForLatitude:(CLLocationDegrees)latitude ForLongitude:(CLLocationDegrees)longitude;
-- (void)getHourlyForecastForLatitude:(CLLocationDegrees)latitude ForLongitude:(CLLocationDegrees)longitude;
-- (void)getMinutelyForecastForLatitude:(CLLocationDegrees)latitude ForLongitude:(CLLocationDegrees)longitude;
+- (void)getConditionsForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude;
+- (void)getDailyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude;
+- (void)getHourlyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude;
+- (void)getMinutelyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude;
+
+- (void)getDailyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude atTime:(NSTimeInterval)time;
+- (void)getHourlyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude atTime:(NSTimeInterval)time;
 
 @end
+
+@protocol ForecastDataSourceDelegate <NSObject>
+
+@optional
+
+- (void)didGetConditions:(NSDictionary *)conditions;
+
+@end
+
