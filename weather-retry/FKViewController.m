@@ -19,6 +19,7 @@
 
 
 - (IBAction)triggerCity:(id)sender {
+    NSLog(@"button pressed");
     //ini for location info
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -40,25 +41,29 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"did update locations");
+    // get newly updated location and grab its coordinates
     CLLocation* location = [locations lastObject];
     CLLocationDegrees latitude = location.coordinate.latitude;
     CLLocationDegrees lonitude = location.coordinate.longitude;
     
     [self getConditionsForLatitude:latitude ForLongitude:lonitude];
     [self getCurrentCity:location];
-    return;
+    [locationManager stopUpdatingLocation];
 }
 
 - (void)getCurrentCity:(CLLocation *)location {
+    NSLog(@"get current city");
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-        
+        // in a background thread, gets location info
         CLPlacemark *placemark = [placemarks lastObject];
+        
+        NSLog(@"location: %@",placemark.addressDictionary);
         NSString *city;
         city = [placemark.addressDictionary objectForKey: @"City"];
         cityLabel.text = city;
-        
     }];
     return;
 }
