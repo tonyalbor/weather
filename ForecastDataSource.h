@@ -35,6 +35,7 @@
 @optional
 
 - (void)didGetConditions:(NSDictionary *)conditions;
+- (void)didGetDailyForecast:(NSArray *)dailyForecast;
 
 @end
 

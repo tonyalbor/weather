@@ -31,7 +31,13 @@ static ForecastDataSource *_sharedDataSource = nil;
     [forecast getCurrentConditionsForLatitude:latitude longitude:longitude success:^(NSMutableDictionary *responseDict) {
         
         NSLog(@"%@", responseDict);
+        
+        // other classes that become ForecastDataSourceDelegates can access
+        // the response dictionary by implementing didGetConditions:
         [delegate didGetConditions:responseDict];
+        
+        NSTimeInterval t = [[NSDate date] timeIntervalSince1970];
+        NSLog(@"time now: %f",t);
         
     } failure:^(NSError *error){
         
@@ -44,6 +50,10 @@ static ForecastDataSource *_sharedDataSource = nil;
     [forecast getDailyForcastForLatitude:latitude longitude:longitude success:^(NSArray *responseArray) {
         
         NSLog(@"%@", responseArray);
+        
+        // other classes that become ForecastDataSourceDelegates can access
+        // the response array by implementing didGetDailyForecast:
+        [delegate didGetDailyForecast:responseArray];
         
     } failure:^(NSError *error){
         

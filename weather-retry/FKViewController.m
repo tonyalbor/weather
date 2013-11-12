@@ -16,6 +16,8 @@
 
 @implementation FKViewController
 @synthesize locationLabel,degreeLabel,summaryLabel;
+@synthesize tomorrowsHighLabel,tomorrowsLowLabel;
+@synthesize nextDaysHighLabel,nextDaysLowLabel;
 @synthesize dataSource;
 
 #pragma mark user interface
@@ -35,6 +37,32 @@
     return;
 }
 
+- (void)updateTodaysForecast:(NSDictionary *)conditions {
+    // set the degrees label
+    NSNumber *temperature = [conditions objectForKey:@"temperature"];
+    degreeLabel.text = [NSString stringWithFormat:@"%d",temperature.intValue];
+    
+    // set the summary label
+    NSString *summary = [conditions objectForKey:@"summary"];
+    summaryLabel.text = [summary uppercaseString];
+}
+
+- (void)updateTomorrowsForecast:(NSDictionary *)tomorrowsForecast {
+    NSNumber *tomorrowsHigh = [tomorrowsForecast objectForKey:@"temperatureMax"];
+    NSNumber *tomorrowsLow = [tomorrowsForecast objectForKey:@"temperatureMin"];
+    
+    tomorrowsHighLabel.text = [tomorrowsHigh stringValue];
+    tomorrowsLowLabel.text = [tomorrowsLow stringValue];
+}
+
+- (void)updateNextDaysForecast:(NSDictionary *)nextDaysForecast {
+    NSNumber *nextDaysHigh = [nextDaysForecast objectForKey:@"temperatureMax"];
+    NSNumber *nextDaysLow = [nextDaysForecast objectForKey:@"temperatureMin"];
+    
+    nextDaysHighLabel.text = [nextDaysHigh stringValue];
+    nextDaysLowLabel.text = [nextDaysLow stringValue];
+}
+
 #pragma mark CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
@@ -49,24 +77,24 @@
     CLLocationDegrees longitude = location.coordinate.longitude;
     
     [dataSource getConditionsForLatitude:latitude forLongitude:longitude];
+    [dataSource getDailyForecastForLatitude:latitude forLongitude:longitude];
     [self updateLocationLabel:location];
 }
 
 #pragma mark ForecaseDataSourceDelegate
 
 - (void)didGetConditions:(NSDictionary *)conditions {
-    // set the degrees label
-    NSNumber *temperature = [conditions objectForKey:@"temperature"];
-    degreeLabel.text = [NSString stringWithFormat:@"%d",temperature.intValue];
-    
-    // set the summary label
-    NSString *summary = [conditions objectForKey:@"summary"];
-    summaryLabel.text = [summary uppercaseString];
+    [self updateTodaysForecast:conditions];
+}
+
+- (void)didGetDailyForecast:(NSArray *)dailyForecast {
+    [self updateTomorrowsForecast:[dailyForecast objectAtIndex:1]];
+    [self updateNextDaysForecast:[dailyForecast objectAtIndex:2]];
 }
 
 #pragma mark UIViewController
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     NSLog(@"view did load");
     if(dataSource == nil) dataSource = [ForecastDataSource sharedDataSource];
     dataSource.delegate = self;
@@ -75,12 +103,12 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void) didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void) viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
 
@@ -92,6 +120,15 @@
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
+}
+
+// just in case we need it
+- (NSTimeInterval)getTomorrowsTime {
+    NSDate *currentDate = [NSDate date];
+    NSDate *tomorrowsDate = [currentDate dateByAddingTimeInterval:NSCalendarUnitDay];
+    NSTimeInterval tomorrowsTime = [tomorrowsDate timeIntervalSince1970];
+    
+    return tomorrowsTime;
 }
 
 @end

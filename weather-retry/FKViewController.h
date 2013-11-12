@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *degreeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tomorrowsHighLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tomorrowsLowLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nextDaysHighLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nextDaysLowLabel;
 
 @property (strong, nonatomic) ForecastDataSource *dataSource;
 
