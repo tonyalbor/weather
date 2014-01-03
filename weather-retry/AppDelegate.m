@@ -13,12 +13,12 @@
 @implementation FKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"FKViewController"];
-    //self.window.rootViewController = self.viewController;
-    //[self.window makeKeyAndVisible];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Test" bundle:nil];
+    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"testViewController"];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

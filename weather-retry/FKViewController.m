@@ -20,6 +20,10 @@
 @synthesize nextDaysHighLabel,nextDaysLowLabel;
 @synthesize dataSource;
 
+- (IBAction)goBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark user interface
 
 - (void)updateLocationLabel:(CLLocation *)location {

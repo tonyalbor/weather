@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3A751388182F19B500BD0A9D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A751387182F19B500BD0A9D /* CoreLocation.framework */; };
+		EA3C9AAC18767FF000FD205F /* CWCloset.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AA518767FF000FD205F /* CWCloset.m */; };
+		EA3C9AAD18767FF000FD205F /* CWCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AA718767FF000FD205F /* CWCondition.m */; };
+		EA3C9AAE18767FF000FD205F /* CWItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AA918767FF000FD205F /* CWItem.m */; };
+		EA3C9AAF18767FF000FD205F /* CWScore.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AAB18767FF000FD205F /* CWScore.m */; };
+		EA3C9AB31876813400FD205F /* CWTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AB21876813400FD205F /* CWTestViewController.m */; };
+		EA3C9AB51876815500FD205F /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3C9AB41876815500FD205F /* Test.storyboard */; };
 		EA6EA97A182F0123002B063E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA979182F0123002B063E /* Foundation.framework */; };
 		EA6EA97C182F0123002B063E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA97B182F0123002B063E /* CoreGraphics.framework */; };
 		EA6EA97E182F0123002B063E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA97D182F0123002B063E /* UIKit.framework */; };
@@ -49,6 +55,17 @@
 
 /* Begin PBXFileReference section */
 		3A751387182F19B500BD0A9D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EA3C9AA418767FF000FD205F /* CWCloset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWCloset.h; path = ../../classes/CWCloset.h; sourceTree = "<group>"; };
+		EA3C9AA518767FF000FD205F /* CWCloset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CWCloset.m; path = ../../classes/CWCloset.m; sourceTree = "<group>"; };
+		EA3C9AA618767FF000FD205F /* CWCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWCondition.h; path = ../../classes/CWCondition.h; sourceTree = "<group>"; };
+		EA3C9AA718767FF000FD205F /* CWCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CWCondition.m; path = ../../classes/CWCondition.m; sourceTree = "<group>"; };
+		EA3C9AA818767FF000FD205F /* CWItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWItem.h; path = ../../classes/CWItem.h; sourceTree = "<group>"; };
+		EA3C9AA918767FF000FD205F /* CWItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CWItem.m; path = ../../classes/CWItem.m; sourceTree = "<group>"; };
+		EA3C9AAA18767FF000FD205F /* CWScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWScore.h; path = ../../weatherTestMexico/CWScore.h; sourceTree = "<group>"; };
+		EA3C9AAB18767FF000FD205F /* CWScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CWScore.m; path = ../../weatherTestMexico/CWScore.m; sourceTree = "<group>"; };
+		EA3C9AB11876813400FD205F /* CWTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWTestViewController.h; sourceTree = SOURCE_ROOT; };
+		EA3C9AB21876813400FD205F /* CWTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWTestViewController.m; sourceTree = SOURCE_ROOT; };
+		EA3C9AB41876815500FD205F /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		EA6EA976182F0123002B063E /* weather-retry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-retry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6EA979182F0123002B063E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA6EA97B182F0123002B063E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,9 +139,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA3C9AB0187680FC00FD205F /* models */ = {
+			isa = PBXGroup;
+			children = (
+				EA3C9AA418767FF000FD205F /* CWCloset.h */,
+				EA3C9AA518767FF000FD205F /* CWCloset.m */,
+				EA3C9AA618767FF000FD205F /* CWCondition.h */,
+				EA3C9AA718767FF000FD205F /* CWCondition.m */,
+				EA3C9AA818767FF000FD205F /* CWItem.h */,
+				EA3C9AA918767FF000FD205F /* CWItem.m */,
+				EA3C9AAA18767FF000FD205F /* CWScore.h */,
+				EA3C9AAB18767FF000FD205F /* CWScore.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		EA6EA96D182F0123002B063E = {
 			isa = PBXGroup;
 			children = (
+				EA3C9AB0187680FC00FD205F /* models */,
 				EAA32FFE18311C3900888B9E /* ForecastKit */,
 				EA6EA9AE182F0CAB002B063E /* AFNetworking */,
 				EAA32FFC18311BD900888B9E /* storyboards */,
@@ -166,6 +199,8 @@
 			children = (
 				EA6EA9CE182F0DC6002B063E /* FKViewController.h */,
 				EA6EA9CF182F0DC6002B063E /* FKViewController.m */,
+				EA3C9AB11876813400FD205F /* CWTestViewController.h */,
+				EA3C9AB21876813400FD205F /* CWTestViewController.m */,
 			);
 			name = controllers;
 			path = "weather-retry";
@@ -243,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				EA6EA98B182F0123002B063E /* Main.storyboard */,
+				EA3C9AB41876815500FD205F /* Test.storyboard */,
 			);
 			name = storyboards;
 			path = "weather-retry";
@@ -344,6 +380,7 @@
 			files = (
 				EA6EA992182F0123002B063E /* Images.xcassets in Resources */,
 				EA6EA984182F0123002B063E /* InfoPlist.strings in Resources */,
+				EA3C9AB51876815500FD205F /* Test.storyboard in Resources */,
 				EA6EA98D182F0123002B063E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA6EA9C4182F0CAB002B063E /* AFImageRequestOperation.m in Sources */,
+				EA3C9AAE18767FF000FD205F /* CWItem.m in Sources */,
 				EA6EA9C7182F0CAB002B063E /* AFPropertyListRequestOperation.m in Sources */,
 				EAA32FFA1831081F00888B9E /* ForecastDataSource.m in Sources */,
 				EA6EA9D0182F0DC6002B063E /* FKViewController.m in Sources */,
@@ -372,10 +410,14 @@
 				EA6EA9C9182F0CAB002B063E /* AFXMLRequestOperation.m in Sources */,
 				EA6EA9C5182F0CAB002B063E /* AFJSONRequestOperation.m in Sources */,
 				EA6EA9CA182F0CAB002B063E /* UIImageView+AFNetworking.m in Sources */,
+				EA3C9AAD18767FF000FD205F /* CWCondition.m in Sources */,
 				EA6EA9C6182F0CAB002B063E /* AFNetworkActivityIndicatorManager.m in Sources */,
 				EA6EA9CD182F0D5F002B063E /* ForecastKit.m in Sources */,
 				EA6EA9C3182F0CAB002B063E /* AFHTTPRequestOperation.m in Sources */,
+				EA3C9AAF18767FF000FD205F /* CWScore.m in Sources */,
+				EA3C9AB31876813400FD205F /* CWTestViewController.m in Sources */,
 				EA6EA986182F0123002B063E /* main.m in Sources */,
+				EA3C9AAC18767FF000FD205F /* CWCloset.m in Sources */,
 				EA6EA9C2182F0CAB002B063E /* AFHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
