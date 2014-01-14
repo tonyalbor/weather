@@ -22,6 +22,7 @@
 
 - (void)getConditionsForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude;
 - (void)getDailyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude;
+
 - (void)getHourlyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude;
 - (void)getMinutelyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude;
 
