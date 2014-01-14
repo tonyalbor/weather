@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *nextDaysHighLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nextDaysLowLabel;
 
+@property (strong, nonatomic) CLLocation *currentLocation;
+
 @property (strong, nonatomic) ForecastDataSource *dataSource;
 
 

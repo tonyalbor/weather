@@ -35,7 +35,13 @@
 @optional
 
 - (void)didGetConditions:(NSDictionary *)conditions;
+- (void)failedToGetConditions:(NSError *)error;
+
 - (void)didGetDailyForecast:(NSArray *)dailyForecast;
+- (void)failedToGetDailyForecast:(NSError *)error;
+
+- (void)didGetHourlyForecast:(NSArray *)hourlyForecast;
+- (void)failedToGetHourlyForecast:(NSError *)error;
 
 @end
 

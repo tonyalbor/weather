@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CWCondition.h"
 #import "CWScore.h"
+#import <Parse/Parse.h>
 
 @interface CWItem : NSObject
 
@@ -39,14 +40,14 @@
  
  // key:    (NSString *)   - skies
  // object: (NSMapTable *) - // key:    (NSNumber *)   - temperature
- // object: (CWScore *)    - score
- //                          (temperature score, times used)
+                             // object: (CWScore *)    - score
+                             //                          (temperature score, times used)
  
  */
 @property (strong, nonatomic) NSMapTable *conditions;
 
 @property (strong, nonatomic) NSString *name;
-
+ 
 // will be either "top" or "bottoms" (maybe "jacket" as well)
 @property (strong, nonatomic) NSString *type;
 

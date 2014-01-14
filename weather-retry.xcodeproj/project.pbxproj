@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3A751388182F19B500BD0A9D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A751387182F19B500BD0A9D /* CoreLocation.framework */; };
+		EA1FC5641884E5FF00BBC1DD /* CWTestAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC5631884E5FF00BBC1DD /* CWTestAddItemViewController.m */; };
+		EA1FC5661884E8C400BBC1DD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1FC5651884E8C400BBC1DD /* Parse.framework */; };
+		EA1FC5681884E8FC00BBC1DD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1FC5671884E8FC00BBC1DD /* AudioToolbox.framework */; };
+		EA1FC56A1884E90400BBC1DD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1FC5691884E90400BBC1DD /* CFNetwork.framework */; };
+		EA1FC56C1884E91A00BBC1DD /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1FC56B1884E91A00BBC1DD /* libz.1.1.3.dylib */; };
+		EA1FC56E1884E92600BBC1DD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1FC56D1884E92600BBC1DD /* QuartzCore.framework */; };
+		EA1FC5701884E92F00BBC1DD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1FC56F1884E92F00BBC1DD /* Security.framework */; };
+		EA1FC5721884E93B00BBC1DD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1FC5711884E93B00BBC1DD /* StoreKit.framework */; };
+		EA1FC5751884ED4D00BBC1DD /* CWStartScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC5741884ED4D00BBC1DD /* CWStartScreenViewController.m */; };
+		EA1FC5781884EDAE00BBC1DD /* CWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC5771884EDAE00BBC1DD /* CWLoginViewController.m */; };
+		EA1FC57B1884EDBC00BBC1DD /* CWSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC57A1884EDBC00BBC1DD /* CWSignUpViewController.m */; };
 		EA3C9AB31876813400FD205F /* CWTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AB21876813400FD205F /* CWTestViewController.m */; };
 		EA3C9AB51876815500FD205F /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3C9AB41876815500FD205F /* Test.storyboard */; };
 		EA3C9AB8187687A100FD205F /* CWCloset.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AB7187687A100FD205F /* CWCloset.m */; };
@@ -55,6 +66,21 @@
 
 /* Begin PBXFileReference section */
 		3A751387182F19B500BD0A9D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EA1FC5621884E5FF00BBC1DD /* CWTestAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWTestAddItemViewController.h; sourceTree = "<group>"; };
+		EA1FC5631884E5FF00BBC1DD /* CWTestAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWTestAddItemViewController.m; sourceTree = "<group>"; };
+		EA1FC5651884E8C400BBC1DD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		EA1FC5671884E8FC00BBC1DD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EA1FC5691884E90400BBC1DD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EA1FC56B1884E91A00BBC1DD /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		EA1FC56D1884E92600BBC1DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EA1FC56F1884E92F00BBC1DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EA1FC5711884E93B00BBC1DD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EA1FC5731884ED4D00BBC1DD /* CWStartScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWStartScreenViewController.h; sourceTree = "<group>"; };
+		EA1FC5741884ED4D00BBC1DD /* CWStartScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWStartScreenViewController.m; sourceTree = "<group>"; };
+		EA1FC5761884EDAE00BBC1DD /* CWLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLoginViewController.h; sourceTree = "<group>"; };
+		EA1FC5771884EDAE00BBC1DD /* CWLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWLoginViewController.m; sourceTree = "<group>"; };
+		EA1FC5791884EDBC00BBC1DD /* CWSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWSignUpViewController.h; sourceTree = "<group>"; };
+		EA1FC57A1884EDBC00BBC1DD /* CWSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWSignUpViewController.m; sourceTree = "<group>"; };
 		EA3C9AB11876813400FD205F /* CWTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWTestViewController.h; sourceTree = SOURCE_ROOT; };
 		EA3C9AB21876813400FD205F /* CWTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWTestViewController.m; sourceTree = SOURCE_ROOT; };
 		EA3C9AB41876815500FD205F /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
@@ -117,9 +143,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1FC5721884E93B00BBC1DD /* StoreKit.framework in Frameworks */,
+				EA1FC5701884E92F00BBC1DD /* Security.framework in Frameworks */,
+				EA1FC56E1884E92600BBC1DD /* QuartzCore.framework in Frameworks */,
+				EA1FC56C1884E91A00BBC1DD /* libz.1.1.3.dylib in Frameworks */,
+				EA1FC56A1884E90400BBC1DD /* CFNetwork.framework in Frameworks */,
+				EA1FC5681884E8FC00BBC1DD /* AudioToolbox.framework in Frameworks */,
 				3A751388182F19B500BD0A9D /* CoreLocation.framework in Frameworks */,
 				EA6EA9D4182F0FD9002B063E /* SystemConfiguration.framework in Frameworks */,
 				EA6EA9D2182F0FC9002B063E /* MobileCoreServices.framework in Frameworks */,
+				EA1FC5661884E8C400BBC1DD /* Parse.framework in Frameworks */,
 				EA6EA97C182F0123002B063E /* CoreGraphics.framework in Frameworks */,
 				EA6EA97E182F0123002B063E /* UIKit.framework in Frameworks */,
 				EA6EA97A182F0123002B063E /* Foundation.framework in Frameworks */,
@@ -157,6 +190,7 @@
 		EA6EA96D182F0123002B063E = {
 			isa = PBXGroup;
 			children = (
+				EA1FC5651884E8C400BBC1DD /* Parse.framework */,
 				EA3C9AB0187680FC00FD205F /* models */,
 				EAA32FFE18311C3900888B9E /* ForecastKit */,
 				EA6EA9AE182F0CAB002B063E /* AFNetworking */,
@@ -183,6 +217,12 @@
 		EA6EA978182F0123002B063E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA1FC5711884E93B00BBC1DD /* StoreKit.framework */,
+				EA1FC56F1884E92F00BBC1DD /* Security.framework */,
+				EA1FC56D1884E92600BBC1DD /* QuartzCore.framework */,
+				EA1FC56B1884E91A00BBC1DD /* libz.1.1.3.dylib */,
+				EA1FC5691884E90400BBC1DD /* CFNetwork.framework */,
+				EA1FC5671884E8FC00BBC1DD /* AudioToolbox.framework */,
 				3A751387182F19B500BD0A9D /* CoreLocation.framework */,
 				EA6EA9D3182F0FD9002B063E /* SystemConfiguration.framework */,
 				EA6EA9D1182F0FC9002B063E /* MobileCoreServices.framework */,
@@ -199,6 +239,14 @@
 			children = (
 				EA6EA9CE182F0DC6002B063E /* FKViewController.h */,
 				EA6EA9CF182F0DC6002B063E /* FKViewController.m */,
+				EA1FC5731884ED4D00BBC1DD /* CWStartScreenViewController.h */,
+				EA1FC5741884ED4D00BBC1DD /* CWStartScreenViewController.m */,
+				EA1FC5761884EDAE00BBC1DD /* CWLoginViewController.h */,
+				EA1FC5771884EDAE00BBC1DD /* CWLoginViewController.m */,
+				EA1FC5791884EDBC00BBC1DD /* CWSignUpViewController.h */,
+				EA1FC57A1884EDBC00BBC1DD /* CWSignUpViewController.m */,
+				EA1FC5621884E5FF00BBC1DD /* CWTestAddItemViewController.h */,
+				EA1FC5631884E5FF00BBC1DD /* CWTestAddItemViewController.m */,
 				EA3C9AB11876813400FD205F /* CWTestViewController.h */,
 				EA3C9AB21876813400FD205F /* CWTestViewController.m */,
 			);
@@ -401,11 +449,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA3C9AB8187687A100FD205F /* CWCloset.m in Sources */,
+				EA1FC5641884E5FF00BBC1DD /* CWTestAddItemViewController.m in Sources */,
 				EA6EA9C4182F0CAB002B063E /* AFImageRequestOperation.m in Sources */,
+				EA1FC5751884ED4D00BBC1DD /* CWStartScreenViewController.m in Sources */,
 				EA6EA9C7182F0CAB002B063E /* AFPropertyListRequestOperation.m in Sources */,
 				EAA32FFA1831081F00888B9E /* ForecastDataSource.m in Sources */,
 				EA3C9ABB187687CC00FD205F /* CWItem.m in Sources */,
 				EA6EA9D0182F0DC6002B063E /* FKViewController.m in Sources */,
+				EA1FC5781884EDAE00BBC1DD /* CWLoginViewController.m in Sources */,
 				EA6EA98A182F0123002B063E /* AppDelegate.m in Sources */,
 				EA6EA9C8182F0CAB002B063E /* AFURLConnectionOperation.m in Sources */,
 				EA3C9ABE187687EA00FD205F /* CWScore.m in Sources */,
@@ -417,6 +468,7 @@
 				EA6EA9C3182F0CAB002B063E /* AFHTTPRequestOperation.m in Sources */,
 				EA3C9AB31876813400FD205F /* CWTestViewController.m in Sources */,
 				EA6EA986182F0123002B063E /* main.m in Sources */,
+				EA1FC57B1884EDBC00BBC1DD /* CWSignUpViewController.m in Sources */,
 				EA3C9AC11876881B00FD205F /* CWCondition.m in Sources */,
 				EA6EA9C2182F0CAB002B063E /* AFHTTPClient.m in Sources */,
 			);
@@ -545,6 +597,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Tony/dev/weather2/weather,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "weather-retry/weather-retry-Prefix.pch";
 				INFOPLIST_FILE = "weather-retry/weather-retry-Info.plist";
@@ -558,6 +614,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Tony/dev/weather2/weather,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "weather-retry/weather-retry-Prefix.pch";
 				INFOPLIST_FILE = "weather-retry/weather-retry-Info.plist";

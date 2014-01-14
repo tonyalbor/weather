@@ -18,6 +18,7 @@
 @synthesize locationLabel,degreeLabel,summaryLabel;
 @synthesize tomorrowsHighLabel,tomorrowsLowLabel;
 @synthesize nextDaysHighLabel,nextDaysLowLabel;
+@synthesize currentLocation;
 @synthesize dataSource;
 
 - (IBAction)goBack:(id)sender {
@@ -25,6 +26,10 @@
 }
 
 #pragma mark user interface
+
+- (IBAction)getNextFourHours:(id)sender {
+    [dataSource getHourlyForecastForLatitude:currentLocation.coordinate.latitude forLongitude:currentLocation.coordinate.longitude];
+}
 
 - (void)updateLocationLabel:(CLLocation *)location {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
@@ -77,6 +82,7 @@
     
     // get newly updated location and grab its coordinates
     CLLocation* location = [locations lastObject];
+    currentLocation = location;
     CLLocationDegrees latitude = location.coordinate.latitude;
     CLLocationDegrees longitude = location.coordinate.longitude;
     
@@ -85,15 +91,47 @@
     [self updateLocationLabel:location];
 }
 
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"Location manager did fail: %@",error);
+}
+
 #pragma mark ForecaseDataSourceDelegate
 
 - (void)didGetConditions:(NSDictionary *)conditions {
     [self updateTodaysForecast:conditions];
 }
 
+- (void)failedToGetConditions:(NSError *)error {
+    NSLog(@"Failed to get conditions: %@",error);
+}
+
+- (void)didGetHourlyForecast:(NSArray *)hourlyForecast {
+    const int numOfHoursToCompute = 4;
+    NSLog(@"hourly forecast: %@",hourlyForecast);
+    double totalTemp = 0.0;
+    
+    for(int i = 0; i < numOfHoursToCompute; ++i) {
+        double feelsLike = [[[hourlyForecast objectAtIndex:i] objectForKey:@"apparentTemperature"] doubleValue];
+        double temp = [[[hourlyForecast objectAtIndex:i] objectForKey:@"temperature"] doubleValue];
+        double average = (feelsLike + temp) / 2.0;
+        
+        totalTemp += average;
+    }
+    totalTemp /= numOfHoursToCompute;
+    NSLog(@"average in next four hours will be: %.02f",totalTemp);
+}
+
+- (void)failedToGetHourlyForecast:(NSError *)error {
+    NSLog(@"Failed to get hourly forecast: %@",error);
+}
+
 - (void)didGetDailyForecast:(NSArray *)dailyForecast {
     [self updateTomorrowsForecast:[dailyForecast objectAtIndex:1]];
     [self updateNextDaysForecast:[dailyForecast objectAtIndex:2]];
+}
+
+- (void)failedToGetDailyForecast:(NSError *)error {
+    NSLog(@"Failed to get daily forecast: %@",error);
 }
 
 #pragma mark UIViewController
@@ -104,6 +142,9 @@
     dataSource.delegate = self;
     [self initializeLocationManager];
     [super viewDidLoad];
+    
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

@@ -7,12 +7,25 @@
 //
 
 #import "CWTestViewController.h"
+#import <Parse/Parse.h>
 
 @interface CWTestViewController ()
 
 @end
 
 @implementation CWTestViewController
+
+@synthesize nameLabel;
+- (IBAction)didPressLookUpItems:(id)sender {
+    PFUser *user = [PFUser currentUser];
+    
+    PFQuery *closet = [PFQuery queryWithClassName:@"CWItem"];
+    [closet whereKey:@"owner" equalTo:user.username];
+    [closet findObjectsInBackgroundWithBlock:^(NSArray *items, NSError *error) {
+        if(!error) NSLog(@"success: %@",items);
+        else NSLog(@"fail");
+    }];
+}
 
 - (IBAction)addItem:(id)sender {
     NSLog(@"clicked add item");
@@ -52,6 +65,11 @@
     //[closet addItem:item15];
     
     
+}
+
+- (IBAction)addCustomItem:(id)sender {
+    UIStoryboard *storyboard = self.storyboard;
+    [self presentViewController:[storyboard instantiateViewControllerWithIdentifier:@"addItem"] animated:YES completion:nil];
 }
 
 - (IBAction)logCloset:(id)sender {
@@ -109,6 +127,16 @@
         [item addToConditions:conditionMinus1 withScoreModifier:scoreModifierDividedByThree];
         [item addToConditions:conditionPlus1 withScoreModifier:scoreModifierDividedByThree];
     }
+    
+    PFUser *user = [PFUser currentUser];
+    PFObject *object = [PFObject objectWithClassName:@"CWCloset" dictionary:[CWCloset sharedDataSource].items];
+    
+    [user setObject:object forKey:@"testCloset"];
+    [user saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
+        if(success) NSLog(@"success");
+        else NSLog(@"fail");
+    }];
+    
 }
 
 - (IBAction)logItemConditions:(id)sender {
@@ -137,6 +165,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *name = [[PFUser currentUser] username];
+    nameLabel.text = [NSString stringWithFormat:@"Hello, %@",name];
 }
 
 - (void)didReceiveMemoryWarning

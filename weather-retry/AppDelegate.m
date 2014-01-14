@@ -7,18 +7,26 @@
 //
 
 #import "AppDelegate.h"
-
 #import "FKViewController.h"
+#import <Parse/Parse.h>
 
 @implementation FKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Parse setApplicationId:@"R8sZZHO3eY3YThzQGziwty7pS9GXRTqjFllktmr0"
+                  clientKey:@"sV1MaKLZ98X3JxjCl9OetXR9LWWFtJvtw2BWO0dg"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Test" bundle:nil];
-    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"testViewController"];
+    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"startScreen"];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    
+    
+    
+    
     return YES;
 }
 

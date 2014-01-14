@@ -10,5 +10,6 @@
 #import "CWCloset.h"
 
 @interface CWTestViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end

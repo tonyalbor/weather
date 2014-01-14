@@ -42,6 +42,7 @@ static ForecastDataSource *_sharedDataSource = nil;
     } failure:^(NSError *error){
         
         NSLog(@"Currently %@", error.description);
+        [delegate failedToGetConditions:error];
         
     }];
 }
@@ -58,18 +59,20 @@ static ForecastDataSource *_sharedDataSource = nil;
     } failure:^(NSError *error){
         
         NSLog(@"Daily %@", error.description);
+        [delegate failedToGetDailyForecast:error];
         
     }];
 }
 
 - (void)getHourlyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude {
     [forecast getHourlyForcastForLatitude:latitude longitude:longitude success:^(NSArray *responseArray) {
-        
-        NSLog(@"%@", responseArray);
+                
+        [delegate didGetHourlyForecast:responseArray];
         
     } failure:^(NSError *error){
         
         NSLog(@"Hourly %@", error.description);
+        [delegate failedToGetHourlyForecast:error];
         
     }];
 }
