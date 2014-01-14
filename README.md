@@ -1,6 +1,6 @@
 weather
 =======
-Awesome weather app under developmet. 
+Awesome weather app under development. 
 
 Tony Albor [@tonyalbor](https://twitter.com/tonyalbor)
 
