@@ -21,7 +21,7 @@
 		EA1FC57B1884EDBC00BBC1DD /* CWSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1FC57A1884EDBC00BBC1DD /* CWSignUpViewController.m */; };
 		EA3C9AB31876813400FD205F /* CWTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AB21876813400FD205F /* CWTestViewController.m */; };
 		EA3C9AB51876815500FD205F /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3C9AB41876815500FD205F /* Test.storyboard */; };
-		EA3C9AB8187687A100FD205F /* CWCloset.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AB7187687A100FD205F /* CWCloset.m */; };
+		EA3C9AB8187687A100FD205F /* CWClosetDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AB7187687A100FD205F /* CWClosetDataSource.m */; };
 		EA3C9ABB187687CC00FD205F /* CWItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9ABA187687CC00FD205F /* CWItem.m */; };
 		EA3C9ABE187687EA00FD205F /* CWScore.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9ABD187687EA00FD205F /* CWScore.m */; };
 		EA3C9AC11876881B00FD205F /* CWCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AC01876881B00FD205F /* CWCondition.m */; };
@@ -55,6 +55,16 @@
 		EAAD63181885FDBE005E619C /* CWClosetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD63171885FDBE005E619C /* CWClosetViewController.m */; };
 		EAAD63201885FED9005E619C /* CWClosetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD631F1885FED9005E619C /* CWClosetCell.m */; };
 		EAAD6323188600A2005E619C /* ParseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD6322188600A2005E619C /* ParseDataSource.m */; };
+		EAAD632518862C3D005E619C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EAAD632418862C3D005E619C /* Podfile */; };
+		EAAD647E188638D0005E619C /* Mixpanel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD646D188638D0005E619C /* Mixpanel.m */; };
+		EAAD647F188638D0005E619C /* MPSurvey.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD646F188638D0005E619C /* MPSurvey.m */; };
+		EAAD6480188638D0005E619C /* MPSurveyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD6471188638D0005E619C /* MPSurveyNavigationController.m */; };
+		EAAD6481188638D0005E619C /* MPSurveyQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD6473188638D0005E619C /* MPSurveyQuestion.m */; };
+		EAAD6482188638D0005E619C /* MPSurveyQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD6475188638D0005E619C /* MPSurveyQuestionViewController.m */; };
+		EAAD6483188638D0005E619C /* NSData+MPBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD6477188638D0005E619C /* NSData+MPBase64.m */; };
+		EAAD6484188638D0005E619C /* UIImage+MPAverageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD6479188638D0005E619C /* UIImage+MPAverageColor.m */; };
+		EAAD6485188638D0005E619C /* UIImage+MPImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD647B188638D0005E619C /* UIImage+MPImageEffects.m */; };
+		EAAD6486188638D0005E619C /* UIView+MPSnapshotImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD647D188638D0005E619C /* UIView+MPSnapshotImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +97,8 @@
 		EA3C9AB11876813400FD205F /* CWTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWTestViewController.h; sourceTree = SOURCE_ROOT; };
 		EA3C9AB21876813400FD205F /* CWTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWTestViewController.m; sourceTree = SOURCE_ROOT; };
 		EA3C9AB41876815500FD205F /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
-		EA3C9AB6187687A100FD205F /* CWCloset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCloset.h; sourceTree = "<group>"; };
-		EA3C9AB7187687A100FD205F /* CWCloset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCloset.m; sourceTree = "<group>"; };
+		EA3C9AB6187687A100FD205F /* CWClosetDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWClosetDataSource.h; sourceTree = "<group>"; };
+		EA3C9AB7187687A100FD205F /* CWClosetDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWClosetDataSource.m; sourceTree = "<group>"; };
 		EA3C9AB9187687CC00FD205F /* CWItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWItem.h; sourceTree = "<group>"; };
 		EA3C9ABA187687CC00FD205F /* CWItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWItem.m; sourceTree = "<group>"; };
 		EA3C9ABC187687EA00FD205F /* CWScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWScore.h; sourceTree = "<group>"; };
@@ -145,6 +155,25 @@
 		EAAD631F1885FED9005E619C /* CWClosetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWClosetCell.m; sourceTree = "<group>"; };
 		EAAD6321188600A2005E619C /* ParseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseDataSource.h; sourceTree = "<group>"; };
 		EAAD6322188600A2005E619C /* ParseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseDataSource.m; sourceTree = "<group>"; };
+		EAAD632418862C3D005E619C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		EAAD646C188638D0005E619C /* Mixpanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mixpanel.h; sourceTree = "<group>"; };
+		EAAD646D188638D0005E619C /* Mixpanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mixpanel.m; sourceTree = "<group>"; };
+		EAAD646E188638D0005E619C /* MPSurvey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurvey.h; sourceTree = "<group>"; };
+		EAAD646F188638D0005E619C /* MPSurvey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurvey.m; sourceTree = "<group>"; };
+		EAAD6470188638D0005E619C /* MPSurveyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurveyNavigationController.h; sourceTree = "<group>"; };
+		EAAD6471188638D0005E619C /* MPSurveyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurveyNavigationController.m; sourceTree = "<group>"; };
+		EAAD6472188638D0005E619C /* MPSurveyQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurveyQuestion.h; sourceTree = "<group>"; };
+		EAAD6473188638D0005E619C /* MPSurveyQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurveyQuestion.m; sourceTree = "<group>"; };
+		EAAD6474188638D0005E619C /* MPSurveyQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurveyQuestionViewController.h; sourceTree = "<group>"; };
+		EAAD6475188638D0005E619C /* MPSurveyQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurveyQuestionViewController.m; sourceTree = "<group>"; };
+		EAAD6476188638D0005E619C /* NSData+MPBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MPBase64.h"; sourceTree = "<group>"; };
+		EAAD6477188638D0005E619C /* NSData+MPBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MPBase64.m"; sourceTree = "<group>"; };
+		EAAD6478188638D0005E619C /* UIImage+MPAverageColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MPAverageColor.h"; sourceTree = "<group>"; };
+		EAAD6479188638D0005E619C /* UIImage+MPAverageColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MPAverageColor.m"; sourceTree = "<group>"; };
+		EAAD647A188638D0005E619C /* UIImage+MPImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MPImageEffects.h"; sourceTree = "<group>"; };
+		EAAD647B188638D0005E619C /* UIImage+MPImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MPImageEffects.m"; sourceTree = "<group>"; };
+		EAAD647C188638D0005E619C /* UIView+MPSnapshotImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MPSnapshotImage.h"; sourceTree = "<group>"; };
+		EAAD647D188638D0005E619C /* UIView+MPSnapshotImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MPSnapshotImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,8 +213,8 @@
 		EA3C9AB0187680FC00FD205F /* models */ = {
 			isa = PBXGroup;
 			children = (
-				EA3C9AB6187687A100FD205F /* CWCloset.h */,
-				EA3C9AB7187687A100FD205F /* CWCloset.m */,
+				EA3C9AB6187687A100FD205F /* CWClosetDataSource.h */,
+				EA3C9AB7187687A100FD205F /* CWClosetDataSource.m */,
 				EA3C9AB9187687CC00FD205F /* CWItem.h */,
 				EA3C9ABA187687CC00FD205F /* CWItem.m */,
 				EA3C9ABC187687EA00FD205F /* CWScore.h */,
@@ -199,6 +228,7 @@
 		EA6EA96D182F0123002B063E = {
 			isa = PBXGroup;
 			children = (
+				EAAD632918863343005E619C /* Mixpanel */,
 				EAAD631A1885FE4E005E619C /* views */,
 				EA1FC5651884E8C400BBC1DD /* Parse.framework */,
 				EA3C9AB0187680FC00FD205F /* models */,
@@ -274,6 +304,7 @@
 				EA6EA982182F0123002B063E /* InfoPlist.strings */,
 				EA6EA985182F0123002B063E /* main.m */,
 				EA6EA987182F0123002B063E /* weather-retry-Prefix.pch */,
+				EAAD632418862C3D005E619C /* Podfile */,
 			);
 			name = "Supporting Files";
 			path = "weather-retry";
@@ -373,6 +404,39 @@
 			name = views;
 			sourceTree = "<group>";
 		};
+		EAAD632918863343005E619C /* Mixpanel */ = {
+			isa = PBXGroup;
+			children = (
+				EAAD646C188638D0005E619C /* Mixpanel.h */,
+				EAAD646D188638D0005E619C /* Mixpanel.m */,
+				EAAD6487188638DD005E619C /* stuff */,
+			);
+			name = Mixpanel;
+			sourceTree = "<group>";
+		};
+		EAAD6487188638DD005E619C /* stuff */ = {
+			isa = PBXGroup;
+			children = (
+				EAAD646E188638D0005E619C /* MPSurvey.h */,
+				EAAD646F188638D0005E619C /* MPSurvey.m */,
+				EAAD6470188638D0005E619C /* MPSurveyNavigationController.h */,
+				EAAD6471188638D0005E619C /* MPSurveyNavigationController.m */,
+				EAAD6472188638D0005E619C /* MPSurveyQuestion.h */,
+				EAAD6473188638D0005E619C /* MPSurveyQuestion.m */,
+				EAAD6474188638D0005E619C /* MPSurveyQuestionViewController.h */,
+				EAAD6475188638D0005E619C /* MPSurveyQuestionViewController.m */,
+				EAAD6476188638D0005E619C /* NSData+MPBase64.h */,
+				EAAD6477188638D0005E619C /* NSData+MPBase64.m */,
+				EAAD6478188638D0005E619C /* UIImage+MPAverageColor.h */,
+				EAAD6479188638D0005E619C /* UIImage+MPAverageColor.m */,
+				EAAD647A188638D0005E619C /* UIImage+MPImageEffects.h */,
+				EAAD647B188638D0005E619C /* UIImage+MPImageEffects.m */,
+				EAAD647C188638D0005E619C /* UIView+MPSnapshotImage.h */,
+				EAAD647D188638D0005E619C /* UIView+MPSnapshotImage.m */,
+			);
+			name = stuff;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -449,6 +513,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAAD632518862C3D005E619C /* Podfile in Resources */,
 				EA6EA992182F0123002B063E /* Images.xcassets in Resources */,
 				EA6EA984182F0123002B063E /* InfoPlist.strings in Resources */,
 				EA3C9AB51876815500FD205F /* Test.storyboard in Resources */,
@@ -471,14 +536,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA3C9AB8187687A100FD205F /* CWCloset.m in Sources */,
+				EA3C9AB8187687A100FD205F /* CWClosetDataSource.m in Sources */,
+				EAAD6485188638D0005E619C /* UIImage+MPImageEffects.m in Sources */,
 				EA1FC5641884E5FF00BBC1DD /* CWTestAddItemViewController.m in Sources */,
 				EA6EA9C4182F0CAB002B063E /* AFImageRequestOperation.m in Sources */,
 				EA1FC5751884ED4D00BBC1DD /* CWStartScreenViewController.m in Sources */,
+				EAAD6486188638D0005E619C /* UIView+MPSnapshotImage.m in Sources */,
 				EA6EA9C7182F0CAB002B063E /* AFPropertyListRequestOperation.m in Sources */,
 				EAA32FFA1831081F00888B9E /* ForecastDataSource.m in Sources */,
+				EAAD6484188638D0005E619C /* UIImage+MPAverageColor.m in Sources */,
 				EAAD63181885FDBE005E619C /* CWClosetViewController.m in Sources */,
+				EAAD647E188638D0005E619C /* Mixpanel.m in Sources */,
 				EA3C9ABB187687CC00FD205F /* CWItem.m in Sources */,
+				EAAD6480188638D0005E619C /* MPSurveyNavigationController.m in Sources */,
+				EAAD6482188638D0005E619C /* MPSurveyQuestionViewController.m in Sources */,
 				EA6EA9D0182F0DC6002B063E /* FKViewController.m in Sources */,
 				EAAD63201885FED9005E619C /* CWClosetCell.m in Sources */,
 				EA1FC5781884EDAE00BBC1DD /* CWLoginViewController.m in Sources */,
@@ -488,8 +559,11 @@
 				EA6EA9C9182F0CAB002B063E /* AFXMLRequestOperation.m in Sources */,
 				EA6EA9C5182F0CAB002B063E /* AFJSONRequestOperation.m in Sources */,
 				EA6EA9CA182F0CAB002B063E /* UIImageView+AFNetworking.m in Sources */,
+				EAAD6483188638D0005E619C /* NSData+MPBase64.m in Sources */,
 				EA6EA9C6182F0CAB002B063E /* AFNetworkActivityIndicatorManager.m in Sources */,
+				EAAD6481188638D0005E619C /* MPSurveyQuestion.m in Sources */,
 				EA6EA9CD182F0D5F002B063E /* ForecastKit.m in Sources */,
+				EAAD647F188638D0005E619C /* MPSurvey.m in Sources */,
 				EA6EA9C3182F0CAB002B063E /* AFHTTPRequestOperation.m in Sources */,
 				EA3C9AB31876813400FD205F /* CWTestViewController.m in Sources */,
 				EA6EA986182F0123002B063E /* main.m in Sources */,
