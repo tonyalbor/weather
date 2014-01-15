@@ -21,7 +21,7 @@
     PFUser *user = [PFUser currentUser];
     NSString *type = [NSString new];
     
-    
+    // save to parse
     PFObject *object = [PFObject objectWithClassName:@"CWItem"];
     [object setObject:nameTextField.text forKey:@"name"];
     [object setObject:@0 forKey:@"itemScore"];
@@ -30,11 +30,6 @@
     [object setObject:type forKey:@"type"];
     [object setObject:user.username forKey:@"owner"];
     
-    // still need to figure out how to store the conditions table onto
-    // the parse item object
-    //PFObject *conditions = [PFObject objectWithClassName:@"conditions"];
-    //[object setObject:conditions forKey:@"conditions"];
-    
     [object saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
         if(success) {
             NSLog(@"success");
@@ -42,6 +37,11 @@
         }
         else NSLog(@"fail");
     }];
+    
+    // save locally (not really saving to device)
+    CWItem *item = [CWItem newItemWithType:type andName:nameTextField.text];
+    [[CWClosetDataSource sharedDataSource] addItem:item];
+    
     
 }
 - (IBAction)cancel:(id)sender {

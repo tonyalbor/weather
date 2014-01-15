@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CWCloset.h"
+#import "CWClosetDataSource.h"
 
 @interface CWTestViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

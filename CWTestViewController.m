@@ -7,7 +7,8 @@
 //
 
 #import "CWTestViewController.h"
-#import <Parse/Parse.h>
+//#import <Parse/Parse.h>
+#import "ParseDataSource.h"
 
 @interface CWTestViewController ()
 
@@ -29,8 +30,8 @@
 
 - (IBAction)addItem:(id)sender {
     NSLog(@"clicked add item");
-    CWCloset *closet = [CWCloset sharedDataSource];
-    
+    CWClosetDataSource *closet = [CWClosetDataSource sharedDataSource];
+    /*
     CWItem *item = [CWItem newItemWithType:@"tops" andName:@"White T-Shirt"];
     CWItem *item1 = [CWItem newItemWithType:@"tops" andName:@"Protoge T-Shirt"];
     CWItem *item2 = [CWItem newItemWithType:@"bottoms" andName:@"Green Levis"];
@@ -63,7 +64,7 @@
     [closet addItem:item13];
     //[closet addItem:item14];
     //[closet addItem:item15];
-    
+    */
     
 }
 
@@ -74,7 +75,7 @@
 
 - (IBAction)logCloset:(id)sender {
     NSLog(@"clicked log closet");
-    CWCloset *closet = [CWCloset sharedDataSource];
+    CWClosetDataSource *closet = [CWClosetDataSource sharedDataSource];
     //NSLog(@"closet: %@",closet.items);
     NSLog(@"closet: \n");
     for(NSString *itemType in closet.items) {
@@ -103,7 +104,7 @@
         
         oldInput = input;
         
-        CWCloset *closet = [CWCloset sharedDataSource];
+        CWClosetDataSource *closet = [CWClosetDataSource sharedDataSource];
         NSArray *allItems = [closet arrayOfAllItems];
         CWItem *item = [allItems objectAtIndex:input];
         
@@ -127,26 +128,16 @@
         [item addToConditions:conditionMinus1 withScoreModifier:scoreModifierDividedByThree];
         [item addToConditions:conditionPlus1 withScoreModifier:scoreModifierDividedByThree];
     }
-    
-    PFUser *user = [PFUser currentUser];
-    PFObject *object = [PFObject objectWithClassName:@"CWCloset" dictionary:[CWCloset sharedDataSource].items];
-    
-    [user setObject:object forKey:@"testCloset"];
-    [user saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
-        if(success) NSLog(@"success");
-        else NSLog(@"fail");
-    }];
-    
 }
 
 - (IBAction)logItemConditions:(id)sender {
-    CWCloset *closet = [CWCloset sharedDataSource];
+    CWClosetDataSource *closet = [CWClosetDataSource sharedDataSource];
     [closet printClosetItems];
 }
 
 - (IBAction)findItem:(id)sender {
     CWCondition *condition = [CWCondition makeNew];
-    CWCloset *closet = [CWCloset sharedDataSource];
+    CWClosetDataSource *closet = [CWClosetDataSource sharedDataSource];
     
     CWItem *top = [closet findItem:@"tops" forCondition:condition];
     CWItem *bottoms = [closet findItem:@"bottoms" forCondition:condition];
@@ -165,7 +156,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    [[ParseDataSource sharedDataSource] getClosetItems];
     NSString *name = [[PFUser currentUser] username];
     nameLabel.text = [NSString stringWithFormat:@"Hello, %@",name];
 }

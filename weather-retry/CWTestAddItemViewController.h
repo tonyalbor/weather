@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#include "CWCloset.h"
+#include "CWClosetDataSource.h"
 
 typedef enum selectedItemType {
     TYPE_TOPS,
