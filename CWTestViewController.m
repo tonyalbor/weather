@@ -17,6 +17,8 @@
 @implementation CWTestViewController
 
 @synthesize nameLabel;
+@synthesize locationManager,currentLocation;
+@synthesize dataSource;
 - (IBAction)didPressLookUpItems:(id)sender {
     PFUser *user = [PFUser currentUser];
     
@@ -155,6 +157,12 @@
 - (IBAction)didPressGoToCloset:(id)sender {
     [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"closetViewController"] animated:YES completion:nil];
 }
+- (IBAction)didPressGetRecommendation:(id)sender {
+    [self getNextFourHours];
+    NSString *sky = [dataSource getCurrentSky];
+    
+    NSLog(@"fin");
+}
 
 - (void)viewDidLoad
 {
@@ -163,6 +171,67 @@
     [[ParseDataSource sharedDataSource] getClosetItems];
     NSString *name = [[PFUser currentUser] username];
     nameLabel.text = [NSString stringWithFormat:@"Hello, %@",name];
+    dataSource = [ForecastDataSource sharedDataSource];
+    //[self initializeLocationManager];
+}
+
+- (void)getNextFourHours {
+    NSLog(@"called");
+    [dataSource getHourlyForecastForLatitude:currentLocation.coordinate.latitude forLongitude:currentLocation.coordinate.longitude];
+}
+
+- (void)didGetHourlyForecast:(NSArray *)hourlyForecast {
+    const int numOfHoursToCompute = 4;
+    NSLog(@"hourly forecast: %@",hourlyForecast);
+    double totalTemp = 0.0;
+    for(int i = 0; i < numOfHoursToCompute; ++i) {
+        double feelsLike = [[[hourlyForecast objectAtIndex:i] objectForKey:@"apparentTemperature"] doubleValue];
+        double temperature = [[[hourlyForecast objectAtIndex:i] objectForKey:@"temperature"] doubleValue];
+        double average = (feelsLike + temperature) / 2.0;
+        
+        totalTemp += average;
+        //NSLog(@"hourly forecast: %@",[hourlyForecast objectAtIndex:i]);
+    }
+    totalTemp /= numOfHoursToCompute;
+    NSLog(@"Temperature will be: %.02f",totalTemp);
+    
+
+}
+
+- (void)failedToGetHourlyForecast:(NSError *)error {
+    NSLog(@"Failed to get hourly forecast: %@",error);
+}
+
+#pragma mark CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"did update locations");
+    
+    // stop updating current location, otherwise it will keep updating
+    [locationManager stopUpdatingLocation];
+    
+    // get newly updated location and grab its coordinates
+    CLLocation* location = [locations lastObject];
+    currentLocation = location;
+    CLLocationDegrees latitude = location.coordinate.latitude;
+    CLLocationDegrees longitude = location.coordinate.longitude;
+    
+    [self getNextFourHours];
+    
+    //[dataSource getConditionsForLatitude:latitude forLongitude:longitude];
+    //[dataSource getDailyForecastForLatitude:latitude forLongitude:longitude];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"Location manager did fail: %@",error);
+}
+
+- (void)initializeLocationManager {
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "CWClosetDataSource.h"
+#import "ForecastDataSource.h"
 
-@interface CWTestViewController : UIViewController
+@interface CWTestViewController : UIViewController <CLLocationManagerDelegate, ForecastDataSourceDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *currentLocation;
+
+@property (strong, nonatomic) ForecastDataSource *dataSource;
 
 @end
