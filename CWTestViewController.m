@@ -152,6 +152,10 @@
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
+- (IBAction)didPressGoToCloset:(id)sender {
+    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"closetViewController"] animated:YES completion:nil];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

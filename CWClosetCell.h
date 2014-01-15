@@ -10,5 +10,6 @@
 
 @interface CWClosetCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 
 @end

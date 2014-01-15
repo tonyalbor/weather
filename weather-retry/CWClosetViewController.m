@@ -14,8 +14,6 @@
 
 @implementation CWClosetViewController
 
-@synthesize collectionView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -24,14 +22,34 @@
     }
     return self;
 }
+- (IBAction)didPressGoBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CWClosetCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"closetCell" forIndexPath:indexPath];
+
+    if(!cell) {
+        cell = [[CWClosetCell alloc] init];
+    }
     
+    NSArray *items = [[CWClosetDataSource sharedDataSource] arrayOfAllItems];
+    CWItem *item = (CWItem *)[items objectAtIndex:indexPath.row];
+    [cell.nameLabel setText:item.name];
+    [cell.typeLabel setText:item.type];
     
-    
+    NSLog(@"item: %@",item.name);
     
     return cell;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+
+    return [[[CWClosetDataSource sharedDataSource] arrayOfAllItems] count];
 }
 
 - (void)viewDidLoad
