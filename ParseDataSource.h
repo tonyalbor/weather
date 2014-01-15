@@ -7,11 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CWClosetDataSource.h"
 
 @interface ParseDataSource : NSObject
 
 + (ParseDataSource *)sharedDataSource;
 
-// create method to retrieve user's closet
+//
+- (void)getClosetItems;
+
+// create a parse readable string of sky from CW
+// create a CW readable string of sky from parse
+
+
 
 @end
