@@ -29,6 +29,8 @@
 - (void)getDailyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude atTime:(NSTimeInterval)time;
 - (void)getHourlyForecastForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude atTime:(NSTimeInterval)time;
 
+- (NSString *)getCurrentSky;
+
 @end
 
 @protocol ForecastDataSourceDelegate <NSObject>

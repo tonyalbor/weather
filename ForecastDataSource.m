@@ -27,6 +27,16 @@ static ForecastDataSource *_sharedDataSource = nil;
 
 #pragma mark current time
 
+- (NSString *)getCurrentSkyForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude {
+    [forecast getCurrentConditionsForLatitude:latitude longitude:longitude success:^(NSMutableDictionary *responseObjects) {
+        
+    }failure:^(NSError *error) {
+        
+    }];
+    
+    return nil;
+}
+
 - (void)getConditionsForLatitude:(CLLocationDegrees)latitude forLongitude:(CLLocationDegrees)longitude {
     [forecast getCurrentConditionsForLatitude:latitude longitude:longitude success:^(NSMutableDictionary *responseDict) {
         
