@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "FKViewController.h"
 #import <Parse/Parse.h>
+#import "Mixpanel.h"
+
+#define MIXPANEL_TOKEN @"12dd43e97ece7a4b70923c7c9a2e46d8"
 
 @implementation FKAppDelegate
 
@@ -23,10 +26,12 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
+
     
-    
-    
-    
+    // Initialize the library with your
+    // Mixpanel project token, MIXPANEL_TOKEN
+    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    [[Mixpanel sharedInstance] track:@"test!" properties:@{@"testing":@1}];
     return YES;
 }
 
