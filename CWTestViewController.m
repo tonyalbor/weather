@@ -7,7 +7,6 @@
 //
 
 #import "CWTestViewController.h"
-//#import <Parse/Parse.h>
 #import "ParseDataSource.h"
 
 @interface CWTestViewController ()
@@ -31,48 +30,9 @@
 }
 
 - (IBAction)addItem:(id)sender {
-    NSLog(@"clicked add item");
-    CWClosetDataSource *closet = [CWClosetDataSource sharedDataSource];
-    /*
-    CWItem *item = [CWItem newItemWithType:@"tops" andName:@"White T-Shirt"];
-    CWItem *item1 = [CWItem newItemWithType:@"tops" andName:@"Protoge T-Shirt"];
-    CWItem *item2 = [CWItem newItemWithType:@"bottoms" andName:@"Green Levis"];
-    CWItem *item3 = [CWItem newItemWithType:@"bottoms" andName:@"Grey Corduroys"];
-    CWItem *item4 = [CWItem newItemWithType:@"tops" andName:@"Black T-Shirt"];
-    CWItem *item5 = [CWItem newItemWithType:@"bottoms" andName:@"Cargo Shorts"];
-    CWItem *item6 = [CWItem newItemWithType:@"tops" andName:@"Arsenal Jersey"];
-    CWItem *item7 = [CWItem newItemWithType:@"tops" andName:@"UCR T-Shirt"];
-    CWItem *item8 = [CWItem newItemWithType:@"tops" andName:@"Black Man City Jersey"];
-    CWItem *item9 = [CWItem newItemWithType:@"tops" andName:@"Black T-Shirt"];
-    CWItem *item10 = [CWItem newItemWithType:@"bottoms" andName:@"Blue Levis"];
-    CWItem *item11 = [CWItem newItemWithType:@"bottoms" andName:@"Light Blue Levis"];
-    CWItem *item12 = [CWItem newItemWithType:@"bottoms" andName:@"Khaki Levis"];
-    CWItem *item13 = [CWItem newItemWithType:@"bottoms" andName:@"Dark Green Levis"];
-    
-    
-    [closet addItem:item];
-    [closet addItem:item1];
-    [closet addItem:item2];
-    [closet addItem:item3];
-    [closet addItem:item4];
-    [closet addItem:item5];
-    [closet addItem:item6];
-    [closet addItem:item7];
-    [closet addItem:item8];
-    [closet addItem:item9];
-    [closet addItem:item10];
-    [closet addItem:item11];
-    [closet addItem:item12];
-    [closet addItem:item13];
-    //[closet addItem:item14];
-    //[closet addItem:item15];
-    */
-    
-}
-
-- (IBAction)addCustomItem:(id)sender {
     UIStoryboard *storyboard = self.storyboard;
     [self presentViewController:[storyboard instantiateViewControllerWithIdentifier:@"addItem"] animated:YES completion:nil];
+    
 }
 
 - (IBAction)logCloset:(id)sender {
@@ -90,6 +50,11 @@
         }
         printf("}\n");
     }
+}
+
+- (IBAction)addCustomItem:(id)sender {
+    UIStoryboard *storyboard = self.storyboard;
+    [self presentViewController:[storyboard instantiateViewControllerWithIdentifier:@"addItem"] animated:YES completion:nil];
 }
 
 - (IBAction)generateCondition:(id)sender {
@@ -157,10 +122,11 @@
 - (IBAction)didPressGoToCloset:(id)sender {
     [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"closetViewController"] animated:YES completion:nil];
 }
+
 - (IBAction)didPressGetRecommendation:(id)sender {
     [self getNextFourHours];
-    NSString *sky = [dataSource getCurrentSky];
-    
+    // NSString *sky = [dataSource getCurrentSky];
+    // [[ForecastDataSource sharedDataSource] getHourlyForecastForLatitude:currentLocation.coordinate.latitude forLongitude:currentLocation.coordinate.longitude];
     NSLog(@"fin");
 }
 
@@ -172,34 +138,80 @@
     NSString *name = [[PFUser currentUser] username];
     nameLabel.text = [NSString stringWithFormat:@"Hello, %@",name];
     dataSource = [ForecastDataSource sharedDataSource];
-    //[self initializeLocationManager];
+    dataSource.delegate = self;
+    currentLocation = [[CLLocation alloc] init];
+    [self initializeLocationManager];
 }
 
 - (void)getNextFourHours {
     NSLog(@"called");
+    
     [dataSource getHourlyForecastForLatitude:currentLocation.coordinate.latitude forLongitude:currentLocation.coordinate.longitude];
 }
 
 - (void)didGetHourlyForecast:(NSArray *)hourlyForecast {
-    const int numOfHoursToCompute = 4;
-    NSLog(@"hourly forecast: %@",hourlyForecast);
+    const int numOfHoursToCompute = 8;
+    NSLog(@"hourly forecast: %d",hourlyForecast.count);
     double totalTemp = 0.0;
+    
+    NSMutableArray *skies = [[NSMutableArray alloc] init];
     for(int i = 0; i < numOfHoursToCompute; ++i) {
+        NSString *sky = [[hourlyForecast objectAtIndex:i] objectForKey:@"icon"];
+        [skies addObject:sky];
+        
         double feelsLike = [[[hourlyForecast objectAtIndex:i] objectForKey:@"apparentTemperature"] doubleValue];
         double temperature = [[[hourlyForecast objectAtIndex:i] objectForKey:@"temperature"] doubleValue];
         double average = (feelsLike + temperature) / 2.0;
         
         totalTemp += average;
-        //NSLog(@"hourly forecast: %@",[hourlyForecast objectAtIndex:i]);
+        NSLog(@"hourly forecast: %@",[hourlyForecast objectAtIndex:i]);
     }
     totalTemp /= numOfHoursToCompute;
     NSLog(@"Temperature will be: %.02f",totalTemp);
     
-
+    NSString *icon = [self getMostCommonString:skies];
+    NSLog(@"icon: %@",icon);
 }
 
 - (void)failedToGetHourlyForecast:(NSError *)error {
     NSLog(@"Failed to get hourly forecast: %@",error);
+}
+
+- (NSString *)getMostCommonString:(NSArray *)strings {
+    NSMapTable *map = [[NSMapTable alloc] init];
+    
+    int i = 0;
+    NSString *icon = [NSString new];
+    
+    for(NSString *string in strings) {
+        if(![map objectForKey:string]) {
+            [map setObject:@1 forKey:string];
+        } else {
+            int newValue = [[map objectForKey:string] intValue] + 1;
+            [map setObject:[NSNumber numberWithInt:newValue] forKey:string];
+            
+            if(newValue > i) {
+                icon = string;
+                i = newValue;
+            }
+        }
+    }
+
+    return icon;
+    
+    /*
+    NSString *icon = [NSString new];
+    int i = 0;
+    for(NSString *key in map) {
+        int comparison = [[map objectForKey:key] intValue];
+        NSLog(@"key: %@, %d", key, comparison);
+        if(comparison > i) {
+            i = comparison;
+            icon = key;
+        }
+    }
+    return icon;
+     */
 }
 
 #pragma mark CLLocationManagerDelegate
@@ -211,12 +223,24 @@
     [locationManager stopUpdatingLocation];
     
     // get newly updated location and grab its coordinates
-    CLLocation* location = [locations lastObject];
-    currentLocation = location;
-    CLLocationDegrees latitude = location.coordinate.latitude;
-    CLLocationDegrees longitude = location.coordinate.longitude;
+    currentLocation = [locations lastObject];
+    NSLog(@"location: %@",currentLocation);
     
-    [self getNextFourHours];
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        // in a background thread, gets location info
+        CLPlacemark *placemark = [placemarks lastObject];
+        
+        NSLog(@"location: %@",placemark.addressDictionary);
+        NSString *city = [placemark.addressDictionary objectForKey: @"City"];
+        NSString *state = [placemark.addressDictionary objectForKey:@"State"];
+        NSLog(@"city, state: %@, %@",city, state);
+        //locationLabel.text = [NSString stringWithFormat:@"%@ %@",city,state];
+    }];
+    
+    //[self getNextFourHours];
     
     //[dataSource getConditionsForLatitude:latitude forLongitude:longitude];
     //[dataSource getDailyForecastForLatitude:latitude forLongitude:longitude];
@@ -241,3 +265,6 @@
 }
 
 @end
+
+
+
