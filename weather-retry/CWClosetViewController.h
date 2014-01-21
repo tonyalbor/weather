@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CWClosetCell.h"
-#import "CWClosetDataSource.h"
+//#import "CWClosetDataSource.h"
+#import "ParseDataSource.h"
 
 @interface CWClosetViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 

@@ -26,6 +26,20 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)didPressDelete:(id)sender {
+    UIButton *deleteButton = (UIButton *)sender;
+    UICollectionViewCell *cellToBeDeleted = (UICollectionViewCell *)[[deleteButton superview] superview];
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cellToBeDeleted];
+    
+    NSArray *items = [[CWClosetDataSource sharedDataSource] arrayOfAllItems];
+    CWItem *item = [items objectAtIndex:indexPath.row];
+    
+    [[CWClosetDataSource sharedDataSource] removeItem:item];
+    [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+    
+    [[ParseDataSource sharedDataSource] removeParseItem:item];
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CWClosetCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"closetCell" forIndexPath:indexPath];
 
@@ -37,6 +51,9 @@
     CWItem *item = (CWItem *)[items objectAtIndex:indexPath.row];
     [cell.nameLabel setText:item.name];
     [cell.typeLabel setText:item.type];
+    
+    UIImage *image = [UIImage imageNamed:item.imageName];
+    [cell.imageView setImage:image];
     
     NSLog(@"item: %@",item.name);
     
