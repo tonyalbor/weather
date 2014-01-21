@@ -65,6 +65,13 @@
 		EAAD6484188638D0005E619C /* UIImage+MPAverageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD6479188638D0005E619C /* UIImage+MPAverageColor.m */; };
 		EAAD6485188638D0005E619C /* UIImage+MPImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD647B188638D0005E619C /* UIImage+MPImageEffects.m */; };
 		EAAD6486188638D0005E619C /* UIView+MPSnapshotImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAD647D188638D0005E619C /* UIView+MPSnapshotImage.m */; };
+		EABB2C92188DEE2E0005CBCF /* CWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABB2C91188DEE2E0005CBCF /* CWViewController.m */; };
+		EABB2C95188DFBE10005CBCF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EABB2C93188DFBE10005CBCF /* icon.png */; };
+		EABB2C96188DFBE10005CBCF /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EABB2C94188DFBE10005CBCF /* icon@2x.png */; };
+		EABB2C98188E251F0005CBCF /* t-shirt.png in Resources */ = {isa = PBXBuildFile; fileRef = EABB2C97188E251F0005CBCF /* t-shirt.png */; };
+		EABB2C9A188E27B90005CBCF /* long-sleeve.png in Resources */ = {isa = PBXBuildFile; fileRef = EABB2C99188E27B90005CBCF /* long-sleeve.png */; };
+		EABB2C9D188E326C0005CBCF /* pants.png in Resources */ = {isa = PBXBuildFile; fileRef = EABB2C9B188E326C0005CBCF /* pants.png */; };
+		EABB2C9E188E326C0005CBCF /* shorts.png in Resources */ = {isa = PBXBuildFile; fileRef = EABB2C9C188E326C0005CBCF /* shorts.png */; };
 		EAED67B41886A7C700DF637A /* cwrough.png in Resources */ = {isa = PBXBuildFile; fileRef = EAED67B31886A7C700DF637A /* cwrough.png */; };
 		EAED67B61886A8A800DF637A /* corner.png in Resources */ = {isa = PBXBuildFile; fileRef = EAED67B51886A8A800DF637A /* corner.png */; };
 		EAED67B81886A92F00DF637A /* corner2.png in Resources */ = {isa = PBXBuildFile; fileRef = EAED67B71886A92F00DF637A /* corner2.png */; };
@@ -177,6 +184,14 @@
 		EAAD647B188638D0005E619C /* UIImage+MPImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MPImageEffects.m"; sourceTree = "<group>"; };
 		EAAD647C188638D0005E619C /* UIView+MPSnapshotImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MPSnapshotImage.h"; sourceTree = "<group>"; };
 		EAAD647D188638D0005E619C /* UIView+MPSnapshotImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MPSnapshotImage.m"; sourceTree = "<group>"; };
+		EABB2C90188DEE2E0005CBCF /* CWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWViewController.h; sourceTree = "<group>"; };
+		EABB2C91188DEE2E0005CBCF /* CWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWViewController.m; sourceTree = "<group>"; };
+		EABB2C93188DFBE10005CBCF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		EABB2C94188DFBE10005CBCF /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		EABB2C97188E251F0005CBCF /* t-shirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "t-shirt.png"; sourceTree = "<group>"; };
+		EABB2C99188E27B90005CBCF /* long-sleeve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "long-sleeve.png"; path = "../long-sleeve.png"; sourceTree = "<group>"; };
+		EABB2C9B188E326C0005CBCF /* pants.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pants.png; sourceTree = "<group>"; };
+		EABB2C9C188E326C0005CBCF /* shorts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shorts.png; sourceTree = "<group>"; };
 		EAED67B31886A7C700DF637A /* cwrough.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cwrough.png; path = ../cwrough.png; sourceTree = "<group>"; };
 		EAED67B51886A8A800DF637A /* corner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corner.png; sourceTree = "<group>"; };
 		EAED67B71886A92F00DF637A /* corner2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corner2.png; sourceTree = "<group>"; };
@@ -297,6 +312,8 @@
 				EA1FC5631884E5FF00BBC1DD /* CWTestAddItemViewController.m */,
 				EA3C9AB11876813400FD205F /* CWTestViewController.h */,
 				EA3C9AB21876813400FD205F /* CWTestViewController.m */,
+				EABB2C90188DEE2E0005CBCF /* CWViewController.h */,
+				EABB2C91188DEE2E0005CBCF /* CWViewController.m */,
 			);
 			name = controllers;
 			path = "weather-retry";
@@ -305,6 +322,12 @@
 		EA6EA980182F0123002B063E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EABB2C97188E251F0005CBCF /* t-shirt.png */,
+				EABB2C99188E27B90005CBCF /* long-sleeve.png */,
+				EABB2C9B188E326C0005CBCF /* pants.png */,
+				EABB2C9C188E326C0005CBCF /* shorts.png */,
+				EABB2C93188DFBE10005CBCF /* icon.png */,
+				EABB2C94188DFBE10005CBCF /* icon@2x.png */,
 				EAED67B71886A92F00DF637A /* corner2.png */,
 				EAED67B51886A8A800DF637A /* corner.png */,
 				EAED67B31886A7C700DF637A /* cwrough.png */,
@@ -524,12 +547,18 @@
 			files = (
 				EAAD632518862C3D005E619C /* Podfile in Resources */,
 				EAED67B81886A92F00DF637A /* corner2.png in Resources */,
+				EABB2C9E188E326C0005CBCF /* shorts.png in Resources */,
+				EABB2C95188DFBE10005CBCF /* icon.png in Resources */,
+				EABB2C9D188E326C0005CBCF /* pants.png in Resources */,
+				EABB2C98188E251F0005CBCF /* t-shirt.png in Resources */,
 				EAED67B41886A7C700DF637A /* cwrough.png in Resources */,
 				EA6EA992182F0123002B063E /* Images.xcassets in Resources */,
 				EA6EA984182F0123002B063E /* InfoPlist.strings in Resources */,
+				EABB2C9A188E27B90005CBCF /* long-sleeve.png in Resources */,
 				EA3C9AB51876815500FD205F /* Test.storyboard in Resources */,
 				EAED67B61886A8A800DF637A /* corner.png in Resources */,
 				EA6EA98D182F0123002B063E /* Main.storyboard in Resources */,
+				EABB2C96188DFBE10005CBCF /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +591,7 @@
 				EA3C9ABB187687CC00FD205F /* CWItem.m in Sources */,
 				EAAD6480188638D0005E619C /* MPSurveyNavigationController.m in Sources */,
 				EAAD6482188638D0005E619C /* MPSurveyQuestionViewController.m in Sources */,
+				EABB2C92188DEE2E0005CBCF /* CWViewController.m in Sources */,
 				EA6EA9D0182F0DC6002B063E /* FKViewController.m in Sources */,
 				EAAD63201885FED9005E619C /* CWClosetCell.m in Sources */,
 				EA1FC5781884EDAE00BBC1DD /* CWLoginViewController.m in Sources */,
