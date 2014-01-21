@@ -17,5 +17,11 @@ typedef enum selectedItemType {
 @interface CWTestAddItemViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
+@property (weak, nonatomic) IBOutlet UILabel *check0;
+@property (weak, nonatomic) IBOutlet UILabel *check1;
+@property (weak, nonatomic) IBOutlet UILabel *nameLengthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *imageErrorLabel;
 
 @end
