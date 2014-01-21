@@ -151,7 +151,7 @@
 
 - (void)didGetHourlyForecast:(NSArray *)hourlyForecast {
     const int numOfHoursToCompute = 8;
-    NSLog(@"hourly forecast: %d",hourlyForecast.count);
+    //NSLog(@"hourly forecast: %d",hourlyForecast.count);
     double totalTemp = 0.0;
     
     NSMutableArray *skies = [[NSMutableArray alloc] init];
@@ -164,7 +164,8 @@
         double average = (feelsLike + temperature) / 2.0;
         
         totalTemp += average;
-        NSLog(@"hourly forecast: %@",[hourlyForecast objectAtIndex:i]);
+        //NSLog(@"hourly forecast: %@",[hourlyForecast objectAtIndex:i]);
+        NSLog(@"%@ %.0lf",sky,average);
     }
     totalTemp /= numOfHoursToCompute;
     NSLog(@"Temperature will be: %.02f",totalTemp);
@@ -175,6 +176,10 @@
 
 - (void)failedToGetHourlyForecast:(NSError *)error {
     NSLog(@"Failed to get hourly forecast: %@",error);
+}
+
+- (IBAction)didSwipeUp:(id)sender {
+    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"closetViewController"] animated:YES completion:nil];
 }
 
 - (NSString *)getMostCommonString:(NSArray *)strings {
