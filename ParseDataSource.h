@@ -15,6 +15,7 @@
 
 //
 - (void)getClosetItems;
+- (void)removeParseItem:(CWItem *)item;
 
 // create a parse readable string of sky from CW
 // create a CW readable string of sky from parse

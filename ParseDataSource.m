@@ -38,6 +38,7 @@ static ParseDataSource *_sharedDataSource = nil;
     [itemQuery findObjectsInBackgroundWithBlock:^(NSArray *tops, NSError *error) {
         for(PFObject *object in tops) {
             CWItem *item = [CWItem newItemWithType:type andName:[object objectForKey:@"name"]];
+            item.imageName = [object objectForKey:@"imageName"];
             //[_sharedDataSource addItem:top];
             item.conditions = [[NSMapTable alloc] init];
             
@@ -61,7 +62,6 @@ static ParseDataSource *_sharedDataSource = nil;
                     [scores setObject:score forKey:temperature];
                     
                     [item.conditions setObject:scores forKey:[object2 objectForKey:@"skies"]];
-                    
                 }
             }];
             
@@ -71,6 +71,37 @@ static ParseDataSource *_sharedDataSource = nil;
         }
         CWClosetDataSource *dataSource = [CWClosetDataSource sharedDataSource];
         [dataSource.items setObject:allItemTypes forKey:type];
+    }];
+}
+
+- (void)removeParseItem:(CWItem *)item {
+    // first, remove the actual item object from parse
+    NSString *username = [[PFUser currentUser] username];
+    
+    PFQuery *itemQuery = [PFQuery queryWithClassName:@"CWItem"];
+    [itemQuery whereKey:@"owner" equalTo:username];
+    [itemQuery whereKey:@"name" equalTo:item.name];
+    
+    [itemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        PFObject *object = [objects objectAtIndex:0];
+        [object deleteInBackgroundWithBlock:^(BOOL success, NSError *error) {
+            if(success) NSLog(@"successfully deleted item: %@",item.name);
+            else NSLog(@"failed to delete item: %@\n%@",item.name,error);
+        }];
+    }];
+    
+    // then, remove conditions object from parse
+    PFQuery *conditionsQuery = [PFQuery queryWithClassName:@"conditions"];
+    [conditionsQuery whereKey:@"owner" equalTo:username];
+    [conditionsQuery whereKey:@"item" equalTo:item.name];
+    
+    [conditionsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        for(PFObject *object in objects) {
+            [object deleteInBackgroundWithBlock:^(BOOL success, NSError *error) {
+                if(success) NSLog(@"successfully deleted conditions for: %@",item.name);
+                else NSLog(@"failed to delete conditions for: %@\n%@",item.name,error);
+            }];
+        }
     }];
 }
 
