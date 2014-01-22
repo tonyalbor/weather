@@ -70,6 +70,9 @@
 // probably default to NO and the user can toggle it to YES
 @property (nonatomic) BOOL isGoodForRain;
 @property (nonatomic) BOOL isGoodForSnow;
+@property (nonatomic) BOOL isGoodForCold;
+@property (nonatomic) BOOL isGoodForClear;
+@property (nonatomic) BOOL isGoodForHot;
 
 // determines if item is possible choice for user
 - (BOOL)isPossibleChoiceForCondition:(CWCondition *)condition;
