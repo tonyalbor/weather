@@ -71,7 +71,11 @@
     // but what if one item never gets used and there are other
     // possible choices, so this one will never be used
     // check this part for sure
-    if(indexCount == 0) return NO;
+    //
+    // new thoughts lol Jan 21:
+    // i will return yes and then later in find item i can
+    // see if there are many not used yet....sure why not
+    if(indexCount == 0) return YES;
     
     NSNumber *temperatureLow = [previouslyUsedTemperatures objectAtIndex:indexOfLow];
     NSNumber *temperatureHigh = [previouslyUsedTemperatures objectAtIndex:indexOfHigh];
