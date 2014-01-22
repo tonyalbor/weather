@@ -42,6 +42,12 @@ static ParseDataSource *_sharedDataSource = nil;
             //[_sharedDataSource addItem:top];
             item.conditions = [[NSMapTable alloc] init];
             
+            item.isGoodForRain = [[object objectForKey:@"goodForRain"] boolValue];
+            item.isGoodForSnow = [[object objectForKey:@"goodForSnow"] boolValue];
+            item.isGoodForCold = [[object objectForKey:@"goodForCold"] boolValue];
+            item.isGoodForClear = [[object objectForKey:@"goodForClear"] boolValue];
+            item.isGoodForHot = [[object objectForKey:@"goodForHot"] boolValue];
+            
             PFQuery *conditionsQuery = [PFQuery queryWithClassName:@"conditions"];
             [conditionsQuery whereKey:@"owner" equalTo:username];
             [conditionsQuery whereKey:@"item" equalTo:item.name];
