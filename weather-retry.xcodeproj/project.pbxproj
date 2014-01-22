@@ -25,6 +25,7 @@
 		EA3C9ABB187687CC00FD205F /* CWItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9ABA187687CC00FD205F /* CWItem.m */; };
 		EA3C9ABE187687EA00FD205F /* CWScore.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9ABD187687EA00FD205F /* CWScore.m */; };
 		EA3C9AC11876881B00FD205F /* CWCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AC01876881B00FD205F /* CWCondition.m */; };
+		EA6AF9ED188F5A7A0080ADDE /* jacket.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6AF9EC188F5A7A0080ADDE /* jacket.png */; };
 		EA6EA97A182F0123002B063E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA979182F0123002B063E /* Foundation.framework */; };
 		EA6EA97C182F0123002B063E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA97B182F0123002B063E /* CoreGraphics.framework */; };
 		EA6EA97E182F0123002B063E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA97D182F0123002B063E /* UIKit.framework */; };
@@ -115,6 +116,7 @@
 		EA3C9ABD187687EA00FD205F /* CWScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWScore.m; sourceTree = "<group>"; };
 		EA3C9ABF1876881B00FD205F /* CWCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCondition.h; sourceTree = "<group>"; };
 		EA3C9AC01876881B00FD205F /* CWCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCondition.m; sourceTree = "<group>"; };
+		EA6AF9EC188F5A7A0080ADDE /* jacket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jacket.png; sourceTree = "<group>"; };
 		EA6EA976182F0123002B063E /* weather-retry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-retry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6EA979182F0123002B063E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA6EA97B182F0123002B063E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -326,6 +328,7 @@
 				EABB2C99188E27B90005CBCF /* long-sleeve.png */,
 				EABB2C9B188E326C0005CBCF /* pants.png */,
 				EABB2C9C188E326C0005CBCF /* shorts.png */,
+				EA6AF9EC188F5A7A0080ADDE /* jacket.png */,
 				EABB2C93188DFBE10005CBCF /* icon.png */,
 				EABB2C94188DFBE10005CBCF /* icon@2x.png */,
 				EAED67B71886A92F00DF637A /* corner2.png */,
@@ -552,6 +555,7 @@
 				EABB2C9D188E326C0005CBCF /* pants.png in Resources */,
 				EABB2C98188E251F0005CBCF /* t-shirt.png in Resources */,
 				EAED67B41886A7C700DF637A /* cwrough.png in Resources */,
+				EA6AF9ED188F5A7A0080ADDE /* jacket.png in Resources */,
 				EA6EA992182F0123002B063E /* Images.xcassets in Resources */,
 				EA6EA984182F0123002B063E /* InfoPlist.strings in Resources */,
 				EABB2C9A188E27B90005CBCF /* long-sleeve.png in Resources */,
