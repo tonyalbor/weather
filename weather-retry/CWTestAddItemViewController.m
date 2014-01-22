@@ -71,9 +71,23 @@ static NSMutableArray *goodForArray = nil;
         type = @"jackets";
         image = @"jacket.png";
     }
-
+    
+    CWItem *item = [CWItem newItemWithType:type andName:nameTextField.text];
+    item.imageName = image;
+    
+    [self setGoodForsForItem:item];
+    
+    // save locally (not really saving to device)
+    [[CWClosetDataSource sharedDataSource] addItem:item];
+    
     [object setObject:type forKey:@"type"];
     [object setObject:user.username forKey:@"owner"];
+    [object setObject:image forKey:@"imageName"];
+    object[@"goodForRain"] = @(item.isGoodForRain);
+    object[@"goodForSnow"] = @(item.isGoodForSnow);
+    object[@"goodForCold"] = @(item.isGoodForCold);
+    object[@"goodForClear"] = @(item.isGoodForClear);
+    object[@"goodForHot"] = @(item.isGoodForHot);
     
     [object saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
         if(success) {
@@ -82,14 +96,6 @@ static NSMutableArray *goodForArray = nil;
         }
         else NSLog(@"fail");
     }];
-    
-    CWItem *item = [CWItem newItemWithType:type andName:nameTextField.text];
-    item.imageName = image;
-    
-    // save locally (not really saving to device)
-    [[CWClosetDataSource sharedDataSource] addItem:item];
-    
-    [self setGoodForsForItem:item];
 }
 
 - (IBAction)cancel:(id)sender {
