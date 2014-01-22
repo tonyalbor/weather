@@ -71,6 +71,29 @@ static CWClosetDataSource *_sharedDataSource = nil;
     [[items objectForKey:item.type] removeObject:item];
 }
 
+- (NSArray *)getForStringsFromCondition:(CWCondition *)condition {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    
+    int temperature = condition.temperature.intValue;
+    NSString *temperatureString = [NSString new];
+    if(temperature < 66) temperatureString = @"cold";
+    else if(temperature < 83) temperatureString = @"clear";
+    else temperatureString = @"hot";
+    
+    NSString *rainString = @"rain";
+    NSString *snowString = @"snow";
+    
+    if([rainString isEqualToString:condition.skies]) {
+        [array addObject:rainString];
+    } else if([snowString isEqualToString:condition.skies]) {
+        [array addObject:snowString];
+    }
+    
+    [array addObject:temperatureString];
+    
+    return (NSArray *)array;
+}
+
 - (CWItem *)findItem:(NSString *)itemType forCondition:(CWCondition *)condition {
     // will contain possible choices for the user to wear
     NSMutableArray *possibleChoices = [[NSMutableArray alloc] init];
@@ -83,7 +106,7 @@ static CWClosetDataSource *_sharedDataSource = nil;
             [possibleChoices addObject:item];
         }
     }
-    
+    NSLog(@"all poss choices");
     if(!possibleChoices.count) {
         // there were no possible choices
         // this will happen when the user
@@ -91,8 +114,44 @@ static CWClosetDataSource *_sharedDataSource = nil;
         
         // still need to implement
         CWItem *item = [self generateGenericRecommendationFor:itemType forCondition:condition];
+        NSLog(@"it shall be nil");
         return item;
     }
+    
+    // go through possibleChoices to find items that haven't
+    // been used before. i will try to use those first
+    
+    int indexOfBest = 0;
+    int numOfGoodStuff = 0;
+    int compare = 0;
+    for(int i = 0; i < possibleChoices.count; ++i) {
+        CWItem *item = (CWItem *)[possibleChoices objectAtIndex:i];
+        if([item.itemScore isEqualToNumber:@0]) {
+            NSLog(@"okay cool");
+            NSArray *forStrings = [self getForStringsFromCondition:condition];
+            for(NSString *string in forStrings) {
+                if([string isEqualToString:@"rain"] && item.isGoodForRain) ++compare;
+                else if([string isEqualToString:@"snow"] && item.isGoodForSnow) ++compare;
+                else if([string isEqualToString:@"cold"] && item.isGoodForCold) ++compare;
+                else if([string isEqualToString:@"clear"] && item.isGoodForClear) ++compare;
+                else if([string isEqualToString:@"hot"] && item.isGoodForHot) ++compare;
+            }
+            if(compare >= numOfGoodStuff) {
+                indexOfBest = i;
+                numOfGoodStuff = compare;
+            }
+            compare = 0;
+        }
+    }
+    NSLog(@"good stuff: %d",numOfGoodStuff);
+    if(numOfGoodStuff > 0) {
+        // there are still unused items,
+        // hence why this counter is greater than zero
+        // lets see if this works
+        NSLog(@"should go here");
+        return [possibleChoices objectAtIndex:indexOfBest];
+    }
+    NSLog(@"woops");
     
     // go through possibleChoices to select an item
     
