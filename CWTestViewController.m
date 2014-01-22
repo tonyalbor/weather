@@ -127,7 +127,6 @@
     [self getNextFourHours];
     // NSString *sky = [dataSource getCurrentSky];
     // [[ForecastDataSource sharedDataSource] getHourlyForecastForLatitude:currentLocation.coordinate.latitude forLongitude:currentLocation.coordinate.longitude];
-    NSLog(@"fin");
 }
 
 - (void)viewDidLoad
@@ -144,8 +143,6 @@
 }
 
 - (void)getNextFourHours {
-    NSLog(@"called");
-    
     [dataSource getHourlyForecastForLatitude:currentLocation.coordinate.latitude forLongitude:currentLocation.coordinate.longitude];
 }
 
@@ -172,6 +169,16 @@
     
     NSString *icon = [self getMostCommonString:skies];
     NSLog(@"icon: %@",icon);
+    
+    CWCondition *condition = [[CWCondition alloc] init];
+    condition.temperature = [NSNumber numberWithInt:(int)totalTemp];
+    condition.skies = icon;
+    
+    CWItem *top = [[CWClosetDataSource sharedDataSource] findItem:@"tops" forCondition:condition];
+    CWItem *bottoms = [[CWClosetDataSource sharedDataSource] findItem:@"bottoms" forCondition:condition];
+    NSLog(@"found recommendation, ho");
+    NSLog(@"top: %@",top.name);
+    NSLog(@"bottoms: %@",bottoms.name);
 }
 
 - (void)failedToGetHourlyForecast:(NSError *)error {
