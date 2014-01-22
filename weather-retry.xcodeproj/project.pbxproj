@@ -236,8 +236,6 @@
 		EA3C9AB0187680FC00FD205F /* models */ = {
 			isa = PBXGroup;
 			children = (
-				EA3C9AB6187687A100FD205F /* CWClosetDataSource.h */,
-				EA3C9AB7187687A100FD205F /* CWClosetDataSource.m */,
 				EA3C9AB9187687CC00FD205F /* CWItem.h */,
 				EA3C9ABA187687CC00FD205F /* CWItem.m */,
 				EA3C9ABC187687EA00FD205F /* CWScore.h */,
@@ -413,6 +411,8 @@
 		EAA32FFD18311C3000888B9E /* datasource */ = {
 			isa = PBXGroup;
 			children = (
+				EA3C9AB6187687A100FD205F /* CWClosetDataSource.h */,
+				EA3C9AB7187687A100FD205F /* CWClosetDataSource.m */,
 				EAA32FF81831081F00888B9E /* ForecastDataSource.h */,
 				EAA32FF91831081F00888B9E /* ForecastDataSource.m */,
 				EAAD6321188600A2005E619C /* ParseDataSource.h */,
