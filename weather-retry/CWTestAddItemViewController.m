@@ -18,6 +18,25 @@
 @synthesize nameTextField,segmentedControl;
 @synthesize check0,check1;
 
+static NSMutableArray *goodForArray = nil;
+
+- (IBAction)didPressGoodFor:(id)sender {
+    if(!goodForArray) goodForArray = [[NSMutableArray alloc] init];
+    
+    UIButton *button = (UIButton *)sender;
+    UIColor *blueColor = [UIColor colorWithRed:0 green:0.478431 blue:1 alpha:1];
+    UIColor *redColor = [self.nameLengthLabel textColor];
+    
+    NSString *goodForString = button.titleLabel.text;
+    if([goodForArray containsObject:goodForString]) {
+        [goodForArray removeObject:goodForString];
+        [button setTitleColor:blueColor forState:UIControlStateNormal];
+    } else {
+        [goodForArray addObject:goodForString];
+        [button setTitleColor:redColor forState:UIControlStateNormal];
+    }
+}
+
 - (IBAction)done:(id)sender {
     if(nameTextField.text.length == 0) {
         NSLog(@"could not save item: no name entered.");
@@ -43,11 +62,14 @@
         if(!check0.hidden) image = @"t-shirt.png";
         else if(!check1.hidden) image = @"long-sleeve.png";
         else image = @"";
-    } else {
+    } else if(segmentedControl.selectedSegmentIndex == 1) {
         type = @"bottoms";
         if(!check0.hidden) image = @"shorts.png";
         else if(!check1.hidden) image = @"pants.png";
         else image = @"";
+    } else {
+        type = @"jackets";
+        image = @"jacket.png";
     }
 
     [object setObject:type forKey:@"type"];
@@ -67,9 +89,11 @@
     // save locally (not really saving to device)
     [[CWClosetDataSource sharedDataSource] addItem:item];
     
-    
+    [self setGoodForsForItem:item];
 }
+
 - (IBAction)cancel:(id)sender {
+    goodForArray = nil;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -92,12 +116,15 @@
 }
 
 - (void)setUpImages {
-    if(!self.segmentedControl.selectedSegmentIndex) {
+    if(self.segmentedControl.selectedSegmentIndex == 0) {
         [self.imageView1 setImage:[UIImage imageNamed:@"t-shirt.png"]];
         [self.imageView2 setImage:[UIImage imageNamed:@"long-sleeve.png"]];
-    } else {
+    } else if(self.segmentedControl.selectedSegmentIndex == 1) {
         [self.imageView1 setImage:[UIImage imageNamed:@"shorts.png"]];
         [self.imageView2 setImage:[UIImage imageNamed:@"pants.png"]];
+    } else {
+        [self.imageView1 setImage:[UIImage imageNamed:@"jacket.png"]];
+        [self.imageView2 setImage:[UIImage imageNamed:@"jacket.png"]];
     }
 }
 
@@ -109,6 +136,28 @@
 - (IBAction)didTapIndex1:(id)sender {
     [check0 setHidden:YES];
     [check1 setHidden:NO];
+}
+
+- (void)setGoodForsForItem:(CWItem *)item {
+    item.isGoodForHot = NO;
+    item.isGoodForCold = NO;
+    item.isGoodForClear = NO;
+    item.isGoodForRain = NO;
+    item.isGoodForSnow = NO;
+    
+    for(NSString *goodForString in goodForArray) {
+        if([goodForString isEqualToString:@"Rain"]) item.isGoodForRain = YES;
+        else if([goodForString isEqualToString:@"Snow"]) item.isGoodForSnow = YES;
+        else if([goodForString isEqualToString:@"Cold"]) item.isGoodForCold = YES;
+        else if([goodForString isEqualToString:@"Clear"]) item.isGoodForClear = YES;
+        else if([goodForString isEqualToString:@"Hot"]) item.isGoodForHot = YES;
+    }
+    
+    NSLog(@"rain: %d",item.isGoodForRain);
+    NSLog(@"snow: %d",item.isGoodForSnow);
+    NSLog(@"cold: %d",item.isGoodForCold);
+    NSLog(@"clear: %d",item.isGoodForClear);
+    NSLog(@"hot: %d",item.isGoodForHot);
 }
 
 - (void)viewDidLoad
