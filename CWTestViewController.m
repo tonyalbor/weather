@@ -124,7 +124,9 @@
 }
 
 - (IBAction)didPressGetRecommendation:(id)sender {
-    [self getNextFourHours];
+    [CWRecommendation getRecommendationStatus];
+    if(![CWRecommendation isActive]) [self getNextFourHours];
+    else [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"recommendation"] animated:YES completion:nil];
     // NSString *sky = [dataSource getCurrentSky];
     // [[ForecastDataSource sharedDataSource] getHourlyForecastForLatitude:currentLocation.coordinate.latitude forLongitude:currentLocation.coordinate.longitude];
 }
@@ -179,6 +181,14 @@
     NSLog(@"found recommendation, ho");
     NSLog(@"top: %@",top.name);
     NSLog(@"bottoms: %@",bottoms.name);
+    
+    [CWRecommendation getRecommendationStatus];
+    if(![CWRecommendation isActive]) {
+        [CWRecommendation setTop:top];
+        [CWRecommendation setBottoms:bottoms];
+    }
+    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"recommendation"] animated:YES completion:nil];
+    
 }
 
 - (void)failedToGetHourlyForecast:(NSError *)error {

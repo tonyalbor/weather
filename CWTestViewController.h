@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CWClosetDataSource.h"
 #import "ForecastDataSource.h"
+#import "CWRecommendation.h"
 
 @interface CWTestViewController : UIViewController <CLLocationManagerDelegate, ForecastDataSourceDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
