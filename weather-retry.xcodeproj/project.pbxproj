@@ -26,6 +26,7 @@
 		EA3C9ABE187687EA00FD205F /* CWScore.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9ABD187687EA00FD205F /* CWScore.m */; };
 		EA3C9AC11876881B00FD205F /* CWCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3C9AC01876881B00FD205F /* CWCondition.m */; };
 		EA6AF9ED188F5A7A0080ADDE /* jacket.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6AF9EC188F5A7A0080ADDE /* jacket.png */; };
+		EA6AF9F0188F7D900080ADDE /* CWRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AF9EF188F7D900080ADDE /* CWRecommendation.m */; };
 		EA6EA97A182F0123002B063E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA979182F0123002B063E /* Foundation.framework */; };
 		EA6EA97C182F0123002B063E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA97B182F0123002B063E /* CoreGraphics.framework */; };
 		EA6EA97E182F0123002B063E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6EA97D182F0123002B063E /* UIKit.framework */; };
@@ -117,6 +118,8 @@
 		EA3C9ABF1876881B00FD205F /* CWCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCondition.h; sourceTree = "<group>"; };
 		EA3C9AC01876881B00FD205F /* CWCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCondition.m; sourceTree = "<group>"; };
 		EA6AF9EC188F5A7A0080ADDE /* jacket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jacket.png; sourceTree = "<group>"; };
+		EA6AF9EE188F7D900080ADDE /* CWRecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWRecommendation.h; sourceTree = "<group>"; };
+		EA6AF9EF188F7D900080ADDE /* CWRecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWRecommendation.m; sourceTree = "<group>"; };
 		EA6EA976182F0123002B063E /* weather-retry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-retry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6EA979182F0123002B063E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA6EA97B182F0123002B063E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -417,6 +420,8 @@
 				EAA32FF91831081F00888B9E /* ForecastDataSource.m */,
 				EAAD6321188600A2005E619C /* ParseDataSource.h */,
 				EAAD6322188600A2005E619C /* ParseDataSource.m */,
+				EA6AF9EE188F7D900080ADDE /* CWRecommendation.h */,
+				EA6AF9EF188F7D900080ADDE /* CWRecommendation.m */,
 			);
 			name = datasource;
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 				EA6EA9C3182F0CAB002B063E /* AFHTTPRequestOperation.m in Sources */,
 				EA3C9AB31876813400FD205F /* CWTestViewController.m in Sources */,
 				EA6EA986182F0123002B063E /* main.m in Sources */,
+				EA6AF9F0188F7D900080ADDE /* CWRecommendation.m in Sources */,
 				EAAD6323188600A2005E619C /* ParseDataSource.m in Sources */,
 				EA1FC57B1884EDBC00BBC1DD /* CWSignUpViewController.m in Sources */,
 				EA3C9AC11876881B00FD205F /* CWCondition.m in Sources */,
