@@ -322,4 +322,12 @@ static CWClosetDataSource *_sharedDataSource = nil;
     }
 }
 
+- (CWItem *)getItemByName:(NSString *)name andType:(NSString *)type {
+    NSArray *itemTypes = [items objectForKey:type];
+    for(CWItem *item in itemTypes) {
+        if([item.name isEqualToString:name]) return item;
+    }
+    return nil;
+}
+
 @end

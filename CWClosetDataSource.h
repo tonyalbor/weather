@@ -26,5 +26,6 @@
 - (CWItem *)generateGenericRecommendationFor:(NSString *)itemType forCondition:(CWCondition *)condition;
 - (NSArray *)arrayOfAllItems;
 - (void)printClosetItems;
+- (CWItem *)getItemByName:(NSString *)name andType:(NSString *)type;
 
 @end
