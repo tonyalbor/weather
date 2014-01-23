@@ -96,6 +96,7 @@ static NSMutableArray *goodForArray = nil;
         }
         else NSLog(@"fail");
     }];
+    goodForArray = nil;
 }
 
 - (IBAction)cancel:(id)sender {
