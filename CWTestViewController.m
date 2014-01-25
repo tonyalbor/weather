@@ -154,6 +154,7 @@
     double totalTemp = 0.0;
     
     NSMutableArray *skies = [[NSMutableArray alloc] init];
+    NSMutableArray *temperatures = [[NSMutableArray alloc] init];
     for(int i = 0; i < numOfHoursToCompute; ++i) {
         NSString *sky = [[hourlyForecast objectAtIndex:i] objectForKey:@"icon"];
         [skies addObject:sky];
@@ -161,6 +162,8 @@
         double feelsLike = [[[hourlyForecast objectAtIndex:i] objectForKey:@"apparentTemperature"] doubleValue];
         double temperature = [[[hourlyForecast objectAtIndex:i] objectForKey:@"temperature"] doubleValue];
         double average = (feelsLike + temperature) / 2.0;
+        
+        [temperatures addObject:[NSNumber numberWithDouble:average]];
         
         totalTemp += average;
         //NSLog(@"hourly forecast: %@",[hourlyForecast objectAtIndex:i]);
@@ -186,6 +189,10 @@
     if(![CWRecommendation isActive]) {
         [CWRecommendation setTop:top];
         [CWRecommendation setBottoms:bottoms];
+        
+        [CWRecommendation setNumberOfHours:numOfHoursToCompute];
+        [CWRecommendation setSkies:skies];
+        [CWRecommendation setTemperatures:temperatures];
     }
     [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"recommendation"] animated:YES completion:nil];
     
