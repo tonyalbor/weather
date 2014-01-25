@@ -16,6 +16,11 @@ static CWItem *_top = nil;
 static CWItem *_bottoms = nil;
 static CWItem *_jacket = nil;
 
+static NSMutableArray *_skies = nil;
+static NSMutableArray *_temperatures = nil;
+
+static NSNumber *_hours = nil;
+
 static CWRecommendation *_sharedDataSource = nil;
 
 + (CWRecommendation *)sharedDataSource {
@@ -49,6 +54,25 @@ static CWRecommendation *_sharedDataSource = nil;
         
         _top = [[CWClosetDataSource sharedDataSource] getItemByName:topName andType:@"tops"];
         _bottoms = [[CWClosetDataSource sharedDataSource] getItemByName:bottomsName andType:@"bottoms"];
+        
+        PFQuery *recommendationQuery = [PFQuery queryWithClassName:@"recommendation"];
+        [recommendationQuery whereKey:@"owner" equalTo:user.username];
+        
+        [recommendationQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            PFObject *object = [objects objectAtIndex:0];
+            _hours = [object objectForKey:@"hours"];
+            
+            NSString *hourKey;
+            [_skies removeAllObjects];
+            [_temperatures removeAllObjects];
+            for(int i = 0; i < _hours.intValue; ++i) {
+                hourKey = [NSString stringWithFormat:@"sHour%d",i+1];
+                [_skies addObject:[object objectForKey:hourKey]];
+                
+                hourKey = [NSString stringWithFormat:@"tHour%d",i+1];
+                [_temperatures addObject:[object objectForKey:hourKey]];
+            }
+        }];
     }
     
 }
@@ -83,6 +107,32 @@ static CWRecommendation *_sharedDataSource = nil;
     _jacket = nil;
 }
 
++ (void)setSkies:(NSMutableArray *)array {
+    [_skies removeAllObjects];
+    _skies = [NSMutableArray arrayWithArray:array];
+}
+
++ (void)setTemperatures:(NSMutableArray *)array {
+    [_temperatures removeAllObjects];
+    _temperatures = [NSMutableArray arrayWithArray:array];
+}
+
++ (NSArray *)getSkies {
+    return _skies;
+}
+
++ (NSArray *)getTemperatures {
+    return _temperatures;
+}
+
++ (void)setNumberOfHours:(int)number {
+    _hours = [NSNumber numberWithInt:number];
+}
+
++ (NSNumber *)getNumberOfHours {
+    return _hours;
+}
+
 + (void)setRecommendationActive {
     PFUser *user = [PFUser currentUser];
     [user setObject:@YES forKey:@"hasRecommendation"];
@@ -93,6 +143,24 @@ static CWRecommendation *_sharedDataSource = nil;
     [user saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
         if(success) NSLog(@"successfully save active recommendation.");
         else NSLog(@"failed saving active recommendation: %@",error);
+    }];
+    
+    PFObject *recommendationObject = [PFObject objectWithClassName:@"recommendation"];
+    [recommendationObject setObject:user.username forKey:@"owner"];
+    [recommendationObject setObject:_hours forKey:@"hours"];
+    
+    NSString *hourKey;
+    for(int i = 0; i < _hours.intValue; ++i) {
+        hourKey = [NSString stringWithFormat:@"sHour%d",i+1];
+        [recommendationObject setObject:[_skies objectAtIndex:i] forKey:hourKey];
+        
+        hourKey = [NSString stringWithFormat:@"tHour%d",i+1];
+        [recommendationObject setObject:[_temperatures objectAtIndex:i] forKey:hourKey];
+    }
+    
+    [recommendationObject saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
+        if(success) NSLog(@"successfully saved recommendation");
+        else NSLog(@"failed to save recommendation: %@",error);
     }];
     
     _isActive = YES;
@@ -110,8 +178,17 @@ static CWRecommendation *_sharedDataSource = nil;
         else NSLog(@"failed to cancel active recommendation: %@",error);
     }];
     
-    [self setItemsToNil];
+    //[self setItemsToNil];
+    [self nillifyEverything];
     
+    _isActive = NO;
+}
+
++ (void)nillifyEverything {
+    [self setItemsToNil];
+    _hours = nil;
+    _skies = nil;
+    _temperatures = nil;
     _isActive = NO;
 }
 

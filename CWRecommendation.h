@@ -34,6 +34,16 @@
 + (CWItem *)getBottoms;
 + (CWItem *)getJacket;
 
++ (void)setSkies:(NSMutableArray *)array;
++ (void)setTemperatures:(NSMutableArray *)array;
+
++ (NSArray *)getSkies;
++ (NSArray *)getTemperatures;
+
++ (void)setNumberOfHours:(int)number;
++ (NSNumber *)getNumberOfHours;
+
 + (void)setRecommendationActive;
++ (void)cancelActiveRecommendation;
 
 @end
