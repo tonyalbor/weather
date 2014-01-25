@@ -29,12 +29,12 @@
 
 - (IBAction)didPressYes:(id)sender {
     if(![CWRecommendation isActive]) [CWRecommendation setRecommendationActive];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setUpView {
     if([CWRecommendation isActive]) {
-        [_yesButton setTitle:@"Active" forState:UIControlStateNormal];
+        [_yesButton setTitle:@"Finish" forState:UIControlStateNormal];
     } else {
         [_yesButton setTitle:@"Yes" forState:UIControlStateNormal];
     }
